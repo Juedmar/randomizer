@@ -68,7 +68,8 @@ countQuestions();
 <li><textarea id="q4" class="theQs" rows="2" cols="auto" placeholder="Question N°4" maxlength="200"></textarea><br></li>
 <li><textarea id="q5" class="theQs" rows="2" cols="auto" placeholder="Question N°5" maxlength="200"></textarea><br></li>
 <li><textarea id="q6" class="theQs" rows="2" cols="auto" placeholder="Question N°6" maxlength="200"></textarea><br></li>
-<!-- HIDDEN TEXTAREAS -->
+ 
+<!-- HIDDEN TEXTAREAS 
 <textarea id="q7" class="theQs" rows="2" cols="auto" maxlength="200" style="display: none;"></textarea>
 <textarea id="q8" class="theQs" rows="2" cols="auto" maxlength="200" style="display: none;"></textarea>
 <textarea id="q9" class="theQs" rows="2" cols="auto" maxlength="200" style="display: none;"></textarea>
@@ -78,7 +79,8 @@ countQuestions();
 <textarea id="q13" class="theQs" rows="2" cols="auto" maxlength="200" style="display: none;"></textarea>
 <textarea id="q14" class="theQs" rows="2" cols="auto" maxlength="200" style="display: none;"></textarea>
 <textarea id="q15" class="theQs" rows="2" cols="auto" maxlength="200" style="display: none;"></textarea>
-<!-- HIDDEN INPUT AREAS -->
+ -->
+ 
 </ol>
 <br>
 </div>
@@ -93,10 +95,8 @@ countQuestions();
 
 
 
-
-
 <script type="text/javascript">
-function countQuestionsORIGINAL() {
+function countQuestions() {
 var howMany = document.getElementsByClassName('theQs').length;
 var questAmount = document.getElementById('questAmount').value;
 var i = questAmount - howMany;
@@ -106,30 +106,11 @@ console.log(howMany,questAmount,i)
 </script>
 
 
-
-<script type="text/javascript">
-function countQuestions() {
-var howMany = document.getElementsByClassName('theQs');
-var questAmount = document.getElementById('questAmount');
-
-var hiddenQs = Array.prototype.slice.call(howMany).reduce(function (r, a) {
- return r + +(a.style.display == 'none');
-}, 0);
-
-var i = (howMany.length - hiddenQs) - questAmount.value;
- for (let step = 0; step < i; step++) { addQuest(); }
-
-console.log(howMany.length,hiddenQs,questAmount.value,i);
-}
-</script>
-
-
 <script type="text/javascript">
 function addQuest() {
 var questList = document.getElementById('questList');
 var howMany = document.getElementsByClassName('theQs');
-var hiddenQs = Array.prototype.slice.call(howMany).reduce(function (r, a) { return r + +(a.style.display == 'none'); }, 0);
-var i = howMany.length - hiddenQs;
+var i = howMany.length;
 // CHECKING IF THERE ARE 15 QUESTIONS
 if (i < 15) {
  // ADDING LISTS
@@ -142,12 +123,6 @@ if (i < 15) {
  newQuest.setAttribute("class", "theQs");
  newQuest.setAttribute("display", "block");
  newQuest.setAttribute("placeholder", "Question N°" + i);
-
-// var newElement = document.createElement('h2');
-// newElement.textContent = 'This element is the new element.';
-// var oldElement = document.getElementById('oldElement');
-// oldElement.replaceWith(newElement);
-
  newList.appendChild(newQuest);
  document.getElementById('newQuestButton').style.display = 'block';
  // ADDING DELETE QUESTION BUTTON
@@ -165,7 +140,7 @@ if (i === 15) { document.getElementById('newQuestButton').style.display = 'none'
 </script>
 
 <script type="text/javascript">
-function checkNumbers(hiddenQs) {
+function checkNumbers() {
 var i = 0;
 const allQuestions = document.getElementsByClassName('theQs');
 for(let eachQuestion of allQuestions) {
