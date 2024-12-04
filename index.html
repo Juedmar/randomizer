@@ -136,9 +136,8 @@ if (i < 15) {
  }
 if (i === 15) { document.getElementById('newQuestButton').style.display = 'none'; }
 }
-</script>
 
-<script type="text/javascript">
+
 function checkNumbers() {
 var i = 0;
 const allQuestions = document.getElementsByClassName('theQs');
@@ -147,7 +146,7 @@ for(let eachQuestion of allQuestions) {
  eachQuestion.id = "q" + i;
  eachQuestion.placeholder = "Question N°" + i;
  var howMany = document.getElementsByClassName('theQs');
- document.getElementById('questAmount').value = howMany.length - 9;
+ document.getElementById('questAmount').value = howMany.length;
  }
 if (i <= 15) { document.getElementById('newQuestButton').style.display = 'block'; }
 }
