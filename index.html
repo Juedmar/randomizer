@@ -59,7 +59,7 @@ countQuestions();
  <div class="closeQuestions" onclick="slideQuestDown()">X</div>
 <b>QUESTIONS:</b>
 <div id="newQuestButton" class="newQuestButton" onclick="addQuest()" title="Add more questions?">+</div>
-<textarea id="questAmount" class="questAmount" rows="1" cols="auto" maxlength="5" style="display: block;"></textarea>
+<textarea id="questAmount" class="questAmount" rows="1" cols="auto" maxlength="5" style="display: none;"></textarea>
 
 <ol id="questList">
 <li><textarea id="q1" class="theQs" rows="2" cols="auto" placeholder="Question N°1" maxlength="200"></textarea><br></li>
@@ -97,11 +97,10 @@ countQuestions();
 
 <script type="text/javascript">
 function countQuestions() {
-var howMany = document.getElementsByClassName('theQs').length;
-var questAmount = document.getElementById('questAmount').value;
-var i = questAmount - howMany;
+var howMany = document.getElementsByClassName('theQs');
+var questAmount = document.getElementById('questAmount');
+var i = questAmount.value - howMany.length;
  for (let step = 0; step < i; step++) { addQuest(); }
-console.log(howMany,questAmount,i)
 }
 </script>
 
@@ -129,7 +128,7 @@ if (i < 15) {
  var delQuest = document.createElement("span");
  delQuest.setAttribute("class", "deleteQuestButton");
  delQuest.setAttribute("textContent", "x");
- delQuest.setAttribute("onclick", "this.parentElement.remove(); this.setAttribute('display','none'); checkNumbers(); ");
+ delQuest.setAttribute("onclick", "this.parentElement.remove(); checkNumbers(); ");
  delQuest.innerHTML = "x"
  newList.appendChild(delQuest);
  // UPDATING TEXTAREA WITH THE NEW AMOUNT OF QUESTIONS
