@@ -1,0 +1,156 @@
+
+body {
+ /* background-color: #F9D5E5; Purple */
+ /* background-color: #CFE0E8; Blue */
+ /* background-color: #F0EFEF; Mauve 1 */
+ /* background-color: #D6CBD3; Mauve 2 */
+ /* background-color: #E4D1D1; Peach */
+ /* background-color: #F1E3DD; Appricot */
+ /* background-color: #E0E2E4; Grayish */
+ /* background-color: #DBF9DB; Green */
+ background-color: #E0E2E4;
+ font-family: Verdana, Helvetica, sans-serif;
+ margin-top: 0px;
+ margin-left: 0px;
+ margin-right: 0px;
+ margin-bottom: 0px;
+}
+
+body::-webkit-scrollbar { display: none; }
+
+.top {
+ background-color: #FEFAE0;
+ position: fixed;
+ left: 0px;
+ top: 0px;
+ height: 44px;
+ width: 100%;
+ border: 1px solid gray;
+ border-style: hidden hidden solid hidden; /* top right bottom left */
+ font-size: min(16px, 1.8vw);
+}
+
+.questions {
+ position: relative;
+ margin: auto;
+ top: 60px;
+ width: 88%;
+ background-color: #B7D7E8;
+ color: black;
+ border: 1px solid gray;
+ border-radius: 12px;
+ font-size: min(14px, 2.5vw);
+ transition: all 1.2s ease-in-out;
+ padding: 12px;
+}
+
+.closeQuestions {
+ position: absolute;
+ top: 6px;
+ right: 8px;
+ color: gray;
+ background-color: pink;
+ border: 1px solid gray;
+ border-radius: 3px;
+ padding-left: 5px;
+ padding-right: 5px;
+ cursor: pointer;
+}
+
+textarea.questAmount {
+ width: 20px;
+ height: 16px;
+ font-size: min(12px, 2vw);
+ text-align: center;
+ margin: 6px;
+ padding: 6px;
+ outline: none;
+ resize: none;
+ border-width: 1px;
+ border-radius: 6px;
+}
+
+textarea.theQs {
+ width: 90%;
+ background-color: #DBF9DB;
+ font-size: min(11px, 2vw);
+ border-width: 1px;
+ border-radius: 6px;
+ margin-left: 3px;
+ margin: 18px;
+ margin-bottom: -12px;
+ margin-left: 12px;
+ padding: 1px;
+ outline: none;
+ resize: none;
+ vertical-align: text-bottom;
+ overflow-wrap: break-word;
+ white-space: pre-wrap;
+}
+
+textarea.newQs {
+ width: 90%;
+ background-color: #DBF9DB;
+ font-size: min(11px, 2vw);
+ border-width: 1px;
+ border-radius: 6px;
+ margin-left: 3px;
+ margin: 18px;
+ margin-bottom: -12px;
+ margin-left: 12px;
+ padding: 1px;
+ outline: none;
+ resize: none;
+ vertical-align: text-bottom;
+ overflow-wrap: break-word;
+ white-space: pre-wrap;
+}
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 800px) {
+ textarea.theQs { width: 82%; }
+}
+
+.newQuestButton {
+ position: absolute;
+ top: 10px;
+ left: 124px;
+ width: 14px;
+ height: 22px;
+ background-color: lightgreen;
+ font-size: 16px; color: gray;
+ border: 1px solid gray;
+ border-radius: 3px;
+ padding-left: 5px;
+ padding-right: 5px;
+ cursor: pointer;
+}
+
+.deleteQuestButton {
+ position: relative;
+ top: 5px;
+ right: 14px;
+ width: 24px;
+ height: 24px;
+ color: red;
+ background-color: pink;
+ border: 1px solid gray;
+ border-radius: 12px;
+ padding-left: 6px;
+ padding-right: 6px;
+ padding-bottom: 3px;
+ cursor: pointer;
+}
+
+.bottom {
+ background-color: #4EA5FF;
+ font-size: min(12px, 2vw);
+ color: white;
+ position: fixed;
+ left: 0px;
+ bottom: 0px;
+ height: 34px;
+ width: 100%;
+ border: 1px solid gray;
+ border-style: solid hidden hidden hidden; /* top right bottom left */
+}
