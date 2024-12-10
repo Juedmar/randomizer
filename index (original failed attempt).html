@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html lang="en-US">
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="icon" href="media/favicon-speak.png">
+ <link rel="stylesheet" href="files/randomizer-style.css">
+ <title>Speaking Interview Question Randomizer</title>
+</head>
+
+
+<!- CONNECTED TO JQUERY WITH THE FOLLOWING SCRIPT ->
+<script src="files/jquery-3.7.1.slim.js"></script>
+<!- https://stackoverflow.com/questions/39155511/html-save-text-in-textarea ->
+<!- https://jquery.com/download/ ->
+
+
+<script type="text/javascript">
+window.onbeforeunload = function() {
+     $('textarea').each(function(){
+        var id = $(this).attr('id');
+        var value = $(this).val();
+       localStorage.setItem(id, value);
+    });
+}
+
+window.onload = function() {
+    $('textarea').each(function(){
+       var id = $(this).attr('id');
+       var text2 = localStorage.getItem(id);
+       if (text2 !== null) $('#'+id).val(text2);
+    });
+// CALL FUNCTIONS ONLOAD!
+countQuestions();
+}
+</script>
+
+
+<div class="top">
+<div id="questButton" style="position: absolute; top: 10px; left: 6px; display: none;">
+  <button style="font-size: 13px; border: 2px solid darkgray; border-radius: 5px 5px;" value="Questions?" onclick="slideQuestUp()"><small>Questions ❓</small></button></a>
+  </div>
+<div id="clearButton" style="position: absolute; top: 10px; left: 6px; display: none; display: block;">
+  <button style="font-size: 13px; border: 2px solid darkgray; border-radius: 5px 5px;" value="Clear?" onclick="doDelete()"><small>Clear ❓</small></button></a>
+  </div>
+<div class="title" style="margin-top: 10px; text-align: center; text-shadow: 2px 2px 5px gray; font-weight: bold;">Speaking Interview Question Randomizer</div>
+<div style="position: absolute; top: 10px; right: 82px;">
+  <button id="fullscreen" style="font-size: 13px; border: 2px solid darkgray; border-radius: 5px 5px;" onclick="activate(document.documentElement);"><small>&#x2752; Fullscreen</small></button>
+  <button id="minimize" style="font-size: 13px; border: 2px solid darkgray; border-radius: 5px 5px; display: none;" onclick="deactivate()"><small>Minimize <font color="red">&#x2716;</small></font></button>
+  </div>
+<div style="position: absolute; top: 10px; right: 8px;">
+  <a href="https://juedmar.github.io/assessment/interviews.html" target="Rubric"><button style="font-size: 13px; border: 2px solid darkgray; border-radius: 5px 5px;" value="Rubric!"><small>📊 Rubric?</small></button></a>
+  </div>
+</div>
+
+
+<div class="questions" id="questions">
+ <div class="closeQuestions" onclick="slideQuestDown()">X</div>
+<b>QUESTIONS:</b>
+<div id="newQuestButton" class="newQuestButton" onclick="addQuest()" title="Add more questions?">+</div>
+<textarea id="questAmount" class="questAmount" rows="1" cols="auto" maxlength="5" style="display: none;"></textarea>
+
+<ol id="questList">
+<li><textarea id="q1" class="theQs" rows="2" cols="auto" placeholder="Question N°1" maxlength="200"></textarea><br></li>
+<li><textarea id="q2" class="theQs" rows="2" cols="auto" placeholder="Question N°2" maxlength="200"></textarea><br></li>
+<li><textarea id="q3" class="theQs" rows="2" cols="auto" placeholder="Question N°3" maxlength="200"></textarea><br></li>
+<li><textarea id="q4" class="theQs" rows="2" cols="auto" placeholder="Question N°4" maxlength="200"></textarea><br></li>
+<li><textarea id="q5" class="theQs" rows="2" cols="auto" placeholder="Question N°5" maxlength="200"></textarea><br></li>
+<li><textarea id="q6" class="theQs" rows="2" cols="auto" placeholder="Question N°6" maxlength="200"></textarea><br></li>
+ 
+<!-- HIDDEN TEXTAREAS 
+<textarea id="q7" class="theQs" rows="2" cols="auto" maxlength="200" style="display: none;"></textarea>
+<textarea id="q8" class="theQs" rows="2" cols="auto" maxlength="200" style="display: none;"></textarea>
+<textarea id="q9" class="theQs" rows="2" cols="auto" maxlength="200" style="display: none;"></textarea>
+<textarea id="q10" class="theQs" rows="2" cols="auto" maxlength="200" style="display: none;"></textarea>
+<textarea id="q11" class="theQs" rows="2" cols="auto" maxlength="200" style="display: none;"></textarea>
+<textarea id="q12" class="theQs" rows="2" cols="auto" maxlength="200" style="display: none;"></textarea>
+<textarea id="q13" class="theQs" rows="2" cols="auto" maxlength="200" style="display: none;"></textarea>
+<textarea id="q14" class="theQs" rows="2" cols="auto" maxlength="200" style="display: none;"></textarea>
+<textarea id="q15" class="theQs" rows="2" cols="auto" maxlength="200" style="display: none;"></textarea>
+ -->
+ 
+</ol>
+<br>
+</div>
+
+
+<div class="bottom">
+  <div class="developer" style="position: absolute; top: 8px; left: 12px; width: 50%;">🧠 Developed by Juan Edo. Méndez <span id="theEmail" style="color: lightblue; cursor: help;" onclick="getEmail()" title="Click to copy e-mail?">(juan.mendez@upla.cl) 💡</span>
+  </div>
+  <div class="time" style="position: absolute; top: 8px; right: 12px; cursor: progress;">📅 Date: <span id="time">12/12/0000 - ⏰ Time: 00:00:00 ?</span>
+  </div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+function countQuestionsORIGINAL() {
+var howMany = document.getElementsByClassName('theQs').length;
+var questAmount = document.getElementById('questAmount').value;
+var i = questAmount - howMany;
+ for (let step = 0; step < i; step++) { addQuest(); }
+console.log(howMany,questAmount,i)
+}
+</script>
+
+
+
+<script type="text/javascript">
+function countQuestions() {
+var howMany = document.getElementsByClassName('theQs');
+var questAmount = document.getElementById('questAmount');
+
+var hiddenQs = Array.prototype.slice.call(howMany).reduce(function (r, a) {
+ return r + +(a.style.display == 'none');
+}, 0);
+
+var i = (howMany.length - hiddenQs) - questAmount.value;
+ for (let step = 0; step < i; step++) { addQuest(); }
+
+console.log(howMany.length,hiddenQs,questAmount.value,i);
+}
+</script>
+
+
+<script type="text/javascript">
+function addQuest() {
+var questList = document.getElementById('questList');
+var howMany = document.getElementsByClassName('theQs');
+var hiddenQs = Array.prototype.slice.call(howMany).reduce(function (r, a) { return r + +(a.style.display == 'none'); }, 0);
+var i = howMany.length - hiddenQs;
+// CHECKING IF THERE ARE 15 QUESTIONS
+if (i < 15) {
+ // ADDING LISTS
+ var newList = document.createElement("li");
+ i++; // UPDATING AMOUNT OF LISTS
+ questList.appendChild(newList);
+ // ADDING QUESTION TO LIST
+ var newQuest = document.createElement("textarea");
+ newQuest.setAttribute("id", "q" + i);
+ newQuest.setAttribute("class", "theQs");
+ newQuest.setAttribute("display", "block");
+ newQuest.setAttribute("placeholder", "Question N°" + i);
+
+// var newElement = document.createElement('h2');
+// newElement.textContent = 'This element is the new element.';
+// var oldElement = document.getElementById('oldElement');
+// oldElement.replaceWith(newElement);
+
+ newList.appendChild(newQuest);
+ document.getElementById('newQuestButton').style.display = 'block';
+ // ADDING DELETE QUESTION BUTTON
+ var delQuest = document.createElement("span");
+ delQuest.setAttribute("class", "deleteQuestButton");
+ delQuest.setAttribute("textContent", "x");
+ delQuest.setAttribute("onclick", "this.parentElement.remove(); this.setAttribute('display','none'); checkNumbers(); ");
+ delQuest.innerHTML = "x"
+ newList.appendChild(delQuest);
+ // UPDATING TEXTAREA WITH THE NEW AMOUNT OF QUESTIONS
+ checkNumbers();
+ }
+if (i === 15) { document.getElementById('newQuestButton').style.display = 'none'; }
+}
+</script>
+
+<script type="text/javascript">
+function checkNumbers(hiddenQs) {
+var i = 0;
+const allQuestions = document.getElementsByClassName('theQs');
+for(let eachQuestion of allQuestions) {
+ i++;
+ eachQuestion.id = "q" + i;
+ eachQuestion.placeholder = "Question N°" + i;
+ var howMany = document.getElementsByClassName('theQs');
+ document.getElementById('questAmount').value = howMany.length - 9;
+ }
+if (i <= 15) { document.getElementById('newQuestButton').style.display = 'block'; }
+}
+</script>
+
+
+
+<script type="text/javascript">
+// ENTER FULL SCREEN
+function activate(ele) { if (ele.requestFullscreen) {
+  ele.requestFullscreen();
+  document.getElementById('fullscreen').style.display = 'none';
+  document.getElementById('minimize').style.display = 'inline';
+  }
+}
+
+// EXIT FULL SCREEN
+function deactivate() { if (document.exitFullscreen) {
+  document.exitFullscreen(); document.getElementById('fullscreen').style.display = 'none';
+  document.getElementById('fullscreen').style.display = 'inline';
+  document.getElementById('minimize').style.display = 'none';
+  }
+}
+</script>
+
+
+
+<script type="text/javascript">
+function slideQuestDown() {
+const questButton = document.getElementById("questButton");
+const questDiv = document.getElementById("questions");
+const clearButton = document.getElementById("clearButton");
+for (var i = 100; i < 750; i++) {
+  (function(i) {
+    setTimeout(function() {
+      questDiv.style.top = i + "px";
+    }, 100);
+  })(i);
+ }
+setTimeout(function() { questDiv.style.display = 'none'; questButton.style.display = 'block'; clearButton.style.display = 'none';}, 1200)
+}
+</script>
+
+
+<script type="text/javascript">
+function slideQuestUp() {
+const questButton = document.getElementById("questButton");
+const clearButton = document.getElementById("clearButton");
+const questDiv = document.getElementById("questions");
+ setTimeout(function() { questDiv.style.display = 'block';}, 200);
+ setTimeout(function() { questDiv.style.top = '60px'; questButton.style.display = 'none'; clearButton.style.display = 'block';}, 600);
+}
+</script>
+
+
+<!- CHECK BEFORE DELETING ->
+<script type="text/javascript">
+function doDelete() {
+if (confirm('Clear all questions?')) {
+  clearQuestions()
+  }
+}
+</script>
+
+
+<script type="text/javascript">
+function clearQuestions() {
+const allQuestions = document.getElementsByClassName('theQs');
+for(let eachQuestion of allQuestions) { eachQuestion.value = ""; }
+}
+</script>
+
+
+<script type="text/javascript">
+function getEmail() {
+  var thisEmail = document.getElementById("theEmail");
+  navigator.clipboard.writeText("juan.mendez@upla.cl");
+  thisEmail.innerHTML = "(Copying the e-mail!) ⏳"; thisEmail.style.color = '#FFE000'; thisEmail.style.cursor = "progress"; thisEmail.setAttribute('title',"Copying the e-mail!");
+  setTimeout(function() { thisEmail.innerHTML = "(E-mail has been copied!) 👍"; thisEmail.style.color = 'blue'; thisEmail.style.cursor = "grab"; thisEmail.setAttribute('title',"E-mail has been copied!");}, 5000)
+  setTimeout(function() { thisEmail.innerHTML = "(juan.mendez@upla.cl) 💡"; thisEmail.style.color = 'lightblue'; thisEmail.style.cursor = "help"; thisEmail.setAttribute('title',"Click to copy again?");}, 9000)
+}
+</script>
+
+
+<script type="text/javascript">
+const d = new Date();
+function refreshTime() {
+  const timeDisplay = document.getElementById("time");
+  const dateString = new Date().toLocaleString(); d.toDateString();
+  const formattedString = dateString.replace(", ", " - ⏰ Time: ");
+  timeDisplay.textContent = formattedString;
+}
+  setInterval(refreshTime, 1000);
+</script>
+
+</body>
+</html>
