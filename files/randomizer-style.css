@@ -16,7 +16,15 @@ body {
  margin-bottom: 0px;
 }
 
+/* HIDDEN!
 body::-webkit-scrollbar { display: none; }
+*/
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #4EA5FF; border: 1px solid gray; }
+::-webkit-scrollbar-thumb { background: #FEFAE0; border: 1px solid gray; }
+::-webkit-scrollbar-thumb:hover { background: #FEFAE0; border: 1px solid gray; }
 
 .top {
  background-color: #FEFAE0;
@@ -117,6 +125,13 @@ textarea.newQs {
  div.questions {margin-bottom: 120px;}
 }
 
+.topButtons {
+ font-size: 13px;
+ border: 2px solid darkgray;
+ border-radius: 5px 5px;
+ cursor: pointer;
+}
+
 .addQuestButton {
  position: absolute;
  top: 10px;
@@ -145,8 +160,8 @@ textarea.newQs {
  border-radius: 3px;
  padding-left: 5px;
  padding-right: 5px;
- cursor: pointer;
  display: none;
+ cursor: pointer;
 }
 
 .bottom {
