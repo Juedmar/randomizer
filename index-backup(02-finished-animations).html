@@ -60,19 +60,12 @@ loadQuestions();
 
 
 <div class="randomizer" id="randomizer" style="display: none; visibility: hidden;">
-<b>QUESTION RANDOMIZER:</b><br>
-<br>
-<div id="randomQs" class="randomQs">
- The Random Questions!
- </div>
-<br>
-<div id="goButton" class="goButton" onclick="goRandomize()">RANDOMIZE!</div>
-<br>
+<b>QUESTION RANDOMIZER:</b><br><br>
 </div>
 
 
 
-<div class="questions" id="questions" style="display: block; visibility: visible;">
+<div class="questions" id="questions">
 <b>QUESTIONS:</b><br><br>
  <div class="addQuestButton" id="addQuestButton" onclick="showMoreQs()" title="Add a question!">+</div>
  <div class="deleteQuestButton" id="deleteQuestButton" onclick="showLessQs()" title="Delete last question!">-</div>
@@ -97,7 +90,6 @@ loadQuestions();
 <div class="questList" id="list14" style="display: none;">14. <textarea id="q14" class="theQs" rows="1" cols="auto" placeholder="Question N°14" maxlength="150"></textarea><br></div>
 <div class="questList" id="list15" style="display: none;">15. <textarea id="q15" class="theQs" rows="1" cols="auto" placeholder="Question N°15" maxlength="150"></textarea><br></div>
 <br>
-<div id="goButton" class="goButton" onclick="slideQuestDown(); showRandomizer()" title="Get ready to randomize!">GO!</div>
 </div>
 
 
@@ -128,28 +120,17 @@ if (i >= 7 && i <= end) {
   }
  }
 
+ // ERASING HIDDEN QUESTIONS - NOT WORKING!
+ // var questList = document.getElementsByClassName('questList'); console.log(questList);
+ // var hiddenQs = Array.prototype.slice.call(questList).reduce(function (r, a) { return r + +(a.style.display == 'none'); }, 0);
+ // const theseQuestions = document.getElementsByClassName('hiddenQs');
+ // for(let eachQuestion of theseQuestions) { eachQuestion.value = ""; }
+
 // DISPLAYING & HIDDING BUTTONS!
 if (i<= 6) {document.getElementById("deleteQuestButton").style.display = "none"}
 if (i >= 7 && i <= 15 ) {document.getElementById("deleteQuestButton").style.display = "block"}
 }
 </script>
-
-
-<script type="text/javascript">
-function goRandomize() {
-var questAmount = document.getElementById('questAmount').value;
-var randomQs = document.getElementById("randomQs");
-
-// RANDOMIZING VARIABLE & UPDATING HTM ELEMENT!
-let random = "q" + Math.floor(Math.random()*(questAmount-0)+1);
-randomQs.innerHTML = document.getElementById(random).value;
-console.log(random);
-
-// UPDATING QUESTIONS HTML TEXT!
-// randomQs.innerHTML = document.getElementById(r).value; WORKING - DO NOT EDIT!!
-}
-</script>
-
 
 
 
@@ -260,11 +241,10 @@ function activate(ele) { if (ele.requestFullscreen) {
 
 // EXIT FULL SCREEN
 function deactivate() { if (document.exitFullscreen) {
- document.exitFullscreen();
- document.getElementById('fullscreen').style.display = 'none';
- document.getElementById('fullscreen').style.display = 'inline';
- document.getElementById('minimize').style.display = 'none';
- }
+  document.exitFullscreen(); document.getElementById('fullscreen').style.display = 'none';
+  document.getElementById('fullscreen').style.display = 'inline';
+  document.getElementById('minimize').style.display = 'none';
+  }
 }
 </script>
 

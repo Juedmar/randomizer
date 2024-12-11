@@ -1,13 +1,16 @@
 
 body {
- /* background-color: #F9D5E5; Purple */
- /* background-color: #CFE0E8; Blue */
+ /* background-color: #F1E3DD; Appricot */
+ /* background-color: #F9E1A8; Gelatto Yellow */
+ /* background-color: #E0E2E4; Grayish */
+ /* background-color: #CFE0E8; Grayish Blue */
+ /* background-color: #DBF9DB; Green */
+ /* background-color: #50C878; Green Emerald */
+ /* background-color: #98FB98; Green Mint */
  /* background-color: #F0EFEF; Mauve 1 */
  /* background-color: #D6CBD3; Mauve 2 */
  /* background-color: #E4D1D1; Peach */
- /* background-color: #F1E3DD; Appricot */
- /* background-color: #E0E2E4; Grayish */
- /* background-color: #DBF9DB; Green */
+ /* background-color: #F9D5E5; Purple */
  background-color: #E0E2E4;
  font-family: Verdana, Helvetica, sans-serif;
  margin-top: 0px;
@@ -40,6 +43,53 @@ body::-webkit-scrollbar { display: none; }
 
 .questList {
  margin-left: 12px;
+}
+
+.randomizer {
+ position: relative;
+ margin: auto;
+ top: 60px;
+ width: 25%;
+ height: 100%;
+ height:;
+ background-color: #98FB98;
+ color: black;
+ border: 1px solid gray;
+ border-radius: 12px;
+ font-size: min(14px, 2.5vw);
+ transition: all 1.6s ease-in-out;
+ padding: 12px;
+}
+
+.randomQs {
+ margin: auto;
+ width: 90%;
+ height: 150px;
+ background-color: #FDFD96;
+ color: black;
+ border: 1px dashed darkgray;
+ border-radius: 12px;
+ font-size: min(24px, 3.5vw);
+ transition: all 1.6s ease-in-out;
+ text-align: center;
+ padding: 24px;
+}
+
+.goButton {
+ position: relative;
+ width: 50%;
+ left: 50%;
+ translate: -50%;
+ text-align: center;
+ background-color: #4EA5FF;
+ font-size: 18px; color: white;
+ border: 1px solid gray;
+ border-radius: 18px;
+ padding: 4px;
+ padding-left: 5px;
+ padding-right: 5px;
+ cursor: pointer;
+ user-select: none;
 }
 
 .questions {
@@ -145,6 +195,7 @@ textarea.newQs {
  padding-left: 5px;
  padding-right: 5px;
  cursor: pointer;
+ user-select: none;
 }
 
 .deleteQuestButton {
@@ -162,6 +213,7 @@ textarea.newQs {
  padding-right: 5px;
  display: none;
  cursor: pointer;
+ user-select: none;
 }
 
 .bottom {
