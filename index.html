@@ -213,9 +213,10 @@ setTimeout(function() {
 <script type="text/javascript">
 function showRandomizer() {
 const randomDiv = document.getElementById("randomizer");
+const randomQuests = document.getElementById("randomQs");
  setTimeout(function() { randomDiv.style.display = "block"}, 100);
- setTimeout(function() { randomDiv.style.width = '85%' }, 400);
- setTimeout(function() { randomDiv.style.visibility = "visible"}, 800);
+ setTimeout(function() { randomDiv.style.width = '85%'; randomQuests.style.width = '80%'; }, 400);
+ setTimeout(function() { randomDiv.style.visibility = 'visible'}, 800);
 }
 </script>
 
@@ -233,7 +234,8 @@ const questDiv = document.getElementById("questions");
 <script type="text/javascript">
 function hideRandomizer() {
 const randomDiv = document.getElementById("randomizer");
- setTimeout(function() { randomDiv.style.width = '25%' }, 100);
+const randomQuests = document.getElementById("randomQs");
+ setTimeout(function() { randomDiv.style.width = '25%'; randomQuests.style.width = '12%'; }, 100);
  setTimeout(function() { randomDiv.style.visibility = "hidden"}, 800);
  setTimeout(function() { randomDiv.style.display = "none"}, 1200);
 }
