@@ -10,6 +10,9 @@
 </head>
 
 
+<audio id="audio" src="media/shuffle.mp3" preload="auto">Your browser does not support the <code>audio</code> element.</audio>
+
+
 <!- CONNECTED TO JQUERY WITH THE FOLLOWING SCRIPT ->
 <script src="files/jquery-3.7.1.slim.js"></script>
 <!- https://stackoverflow.com/questions/39155511/html-save-text-in-textarea ->
@@ -36,7 +39,7 @@ loadQuestions();
 }
 </script>
 
-
+<body>
 <div class="top">
 
 <div style="position: absolute; top: 10px; left: 10px;">
@@ -67,7 +70,8 @@ loadQuestions();
 <div id="randomQs" class="randomQs">Your randomized questions<br>will show here!</div>
 <br>
 <div id="randomButton" class="actionButton" onclick="goRandomize()">RANDOMIZE!</div>
-<br>
+<div id="audioOn" onclick="enableAudio()" style="cursor: pointer;" title="Enable sound effect!">🔈</div>
+<div id="audioOff" onclick="disableAudio()" style="cursor: pointer; display: none;" title="Disable sound effect!">🔊</div>
 </div>
 
 
@@ -134,7 +138,21 @@ if (i >= 7 && i <= 15 ) {document.getElementById("deleteQuestButton").style.disp
 </script>
 
 
+
 <script type="text/javascript">
+var audioToggle;
+function enableAudio() {
+document.getElementById("audioOn").style.display = "none";
+document.getElementById("audioOff").style.display = "block";
+audioToggle = "On";
+}
+
+function disableAudio() {
+document.getElementById("audioOn").style.display = "block";
+document.getElementById("audioOff").style.display = "none";
+audioToggle = "Off";
+}
+
 function goRandomize() {
 var questAmount = document.getElementById('questAmount').value;
 var randomQs = document.getElementById("randomQs");
@@ -142,6 +160,10 @@ var randomQs = document.getElementById("randomQs");
 // RANDOMIZING VARIABLE & UPDATING HTM ELEMENT!
 let random = "q" + Math.floor(Math.random()*(questAmount-0)+1);
 randomQs.innerHTML = "<b>Question N°" + random.slice(1) +":</b> " + document.getElementById(random).value;
+
+// PLAY DICE SHUFFLE AUDIO!
+audios = document.querySelectorAll('audio');
+if (audioToggle === "On") { audio.play() }
 }
 </script>
 
@@ -286,6 +308,7 @@ questAmount.value = 6;
 window.location.reload();
 }
 </script>
+
 
 
 <script type="text/javascript">

@@ -101,6 +101,9 @@ body::-webkit-scrollbar { display: none; }
  cursor: pointer;
 }
 
+.closeButton:hover { color: red; }
+.closeButton:active { color: yellow; background-color: red; }
+
 textarea.questAmount {
  width: 20px;
  height: 16px;
@@ -185,6 +188,9 @@ textarea.answers {
  user-select: none;
 }
 
+.actionButton:hover { background-color: #4EAFFF; }
+.actionButton:active { background-color: red; }
+
 .studyButton {
  position: absolute;
  width: 30%;
@@ -199,6 +205,9 @@ textarea.answers {
  cursor: pointer;
  user-select: none;
 }
+
+.studyButton:hover { background-color: #4EAFFF; }
+.studyButton:active { background-color: red; }
 
 .topButtons {
  font-size: 14px;
