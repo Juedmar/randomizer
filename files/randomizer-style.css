@@ -49,9 +49,7 @@ body::-webkit-scrollbar { display: none; }
  position: relative;
  margin: auto;
  top: 60px;
- width: 25%;
- height: 100%;
- height:;
+ width: 20%;
  background-color: #98FB98;
  color: black;
  border: 1px solid gray;
@@ -68,7 +66,7 @@ body::-webkit-scrollbar { display: none; }
  color: black;
  border: 1px dashed darkgray;
  border-radius: 12px;
- font-size: min(24px, 3.5vw);
+ font-size: min(24px, 4vw);
  transition: all 1.6s ease-in-out;
  text-align: center;
  padding: 24px;
@@ -172,6 +170,7 @@ textarea.newQs {
  textarea.theQs { width: 82%; }
  textarea.theQs { height: 32px; }
  div.questions {margin-bottom: 120px;}
+ .randomQs {margin: auto; width: 75%;}
 }
 
 .topButtons {
