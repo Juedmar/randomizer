@@ -7,10 +7,6 @@
  <link rel="icon" href="media/favicon-speak.png">
  <link rel="stylesheet" href="files/randomizer-style.css">
  <title>Question-Randomize-Inator!</title>
-</head>
-
-
-<audio id="audio" src="media/shuffle.mp3" preload="auto">Your browser does not support the <code>audio</code> element.</audio>
 
 <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
 <!- CONNECTED TO JQUERY WITH THE FOLLOWING SCRIPT ->
@@ -39,6 +35,20 @@ loadQuestions();
 stupidCanvas();
 }
 </script>
+
+
+</head>
+
+<script type="text/javascript">
+window.onload = function () {
+    var myCanvas = document.getElementById('canvas');
+    var ctx = myCanvas.getContext('2d');
+}
+</script>
+
+
+<audio id="audio" src="media/shuffle.mp3" preload="auto">Your browser does not support the <code>audio</code> element.</audio>
+
 
 
 <body onload="stupidCanvas();">
@@ -335,14 +345,6 @@ function refreshTime() {
   timeDisplay.textContent = formattedString;
 }
   setInterval(refreshTime, 1000);
-</script>
-
-// FIXING JQUERY STUPID CANVAS GETCONTEXT ERROR!
-<script type="text/javascript">
-function stupidCanvas() {
- var myCanvas = document.getElementById('canvas');
- var ctx = myCanvas.getContext('2d');
-}
 </script>
 
 </html>
