@@ -36,11 +36,12 @@ window.onload = function() {
     });
 // CALL FUNCTIONS ONLOAD!
 loadQuestions();
+stupidCanvas();
 }
 </script>
 
 
-<body>
+<body onload="stupidCanvas();">
 <div class="top">
 
 <div style="position: absolute; top: 10px; left: 10px;">
@@ -336,5 +337,12 @@ function refreshTime() {
   setInterval(refreshTime, 1000);
 </script>
 
+// FIXING JQUERY STUPID CANVAS GETCONTEXT ERROR!
+<script type="text/javascript">
+function stupidCanvas() {
+ var myCanvas = document.getElementById('canvas');
+ var ctx = myCanvas.getContext('2d');
+}
+</script>
 
 </html>
