@@ -48,6 +48,7 @@ body::-webkit-scrollbar { display: none; }
 .randomizer {
  position: relative;
  margin: auto;
+ margin-bottom: 112px;
  top: 60px;
  width: 20%;
  background-color: #98FB98;
@@ -62,37 +63,21 @@ body::-webkit-scrollbar { display: none; }
 .randomQs {
  margin: auto;
  width: 82%;
- height: 75px;
+ height: 85px;
  background-color: #FDFD96;
  color: black;
  border: 1px dashed darkgray;
  border-radius: 12px;
- font-size: min(24px, 4vw);
+ font-size: min(24px, 3.6vw);
  transition: all 1.6s ease-in-out;
  text-align: center;
  padding: 36px;
 }
 
-.goButton {
- position: relative;
- width: 50%;
- left: 50%;
- translate: -50%;
- text-align: center;
- background-color: #4EA5FF;
- font-size: 18px; color: white;
- border: 1px solid gray;
- border-radius: 18px;
- padding: 4px;
- padding-left: 5px;
- padding-right: 5px;
- cursor: pointer;
- user-select: none;
-}
-
 .questions {
  position: relative;
  margin: auto;
+ margin-bottom: 120px;
  top: 60px;
  width: 88%;
  background-color: #B7D7E8;
@@ -148,17 +133,17 @@ textarea.theQs {
  white-space: pre-wrap;
 }
 
-textarea.newQs {
- width: 90%;
+textarea.studyQs {
+ width: 65%;
+ height: 26px;
  background-color: #DBF9DB;
  font-size: min(11px, 2vw);
  border-width: 1px;
  border-radius: 6px;
  margin-left: 3px;
- margin: 18px;
- margin-bottom: -12px;
- margin-left: 12px;
- padding: 1px;
+ margin: 6px;
+ margin-bottom: -3px;
+ padding: 6px;
  outline: none;
  resize: none;
  vertical-align: text-bottom;
@@ -166,10 +151,62 @@ textarea.newQs {
  white-space: pre-wrap;
 }
 
+textarea.answers {
+ width: 25%;
+ height: 26px;
+ background-color: #F9D5E5;
+ font-size: min(11px, 2vw);
+ border-width: 1px;
+ border-radius: 6px;
+ margin-left: 3px;
+ margin: 6px;
+ margin-bottom: -3px;
+ padding: 6px;
+ outline: none;
+ resize: none;
+ vertical-align: text-bottom;
+ overflow-wrap: break-word;
+ white-space: pre-wrap;
+}
+
+.actionButton {
+ position: relative;
+ width: 50%;
+ left: 50%;
+ translate: -50%;
+ text-align: center;
+ background-color: #4EA5FF;
+ font-size: 18px; color: white;
+ border: 1px solid gray;
+ border-radius: 18px;
+ padding: 4px;
+ padding-left: 5px;
+ padding-right: 5px;
+ margin-bottom: 6px;
+ cursor: pointer;
+ user-select: none;
+}
+
+.studyButton {
+ position: absolute;
+ width: 30%;
+ text-align: center;
+ background-color: #4EA5FF;
+ font-size: 18px; color: white;
+ border: 1px solid gray;
+ border-radius: 18px;
+ padding: 4px;
+ padding-left: 5px;
+ padding-right: 5px;
+ cursor: pointer;
+ user-select: none;
+}
+
 /* Use a media query to add a break point at 800px: */
 @media screen and (max-width: 800px) {
- textarea.theQs { width: 82%; }
- textarea.theQs { height: 32px; }
+ textarea.theQs { width: 82%; height: 32px; }
+ textarea.studyQs { width: 50%; height: 36px; }
+ textarea.answers { width: 30%; height: 36px; }
  div.questions {margin-bottom: 120px;}
  .randomQs {margin: auto; width: 75%;}
 }

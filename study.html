@@ -6,7 +6,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="icon" href="media/favicon-speak.png">
  <link rel="stylesheet" href="files/randomizer-style.css">
- <title>Question-Randomize-Inator!</title>
+ <title>Study-Quiz-Inator!</title>
 </head>
 
 
@@ -41,10 +41,10 @@ loadQuestions();
 
 <div style="position: absolute; top: 10px; left: 10px;">
  <a href="https://juedmar.github.io/assessment/interviews.html" target="Rubric"><button class="topButtons" title="Assessment Rubric!" value="Rubric!">📊</button></a>
- <a href="study.html"><button class="topButtons" title="Study Format!" value="Study!">📖</button></a>
+ <a href="index.html"><button class="topButtons" title="Interview Format!" value="Interviews!">🗣️</button></a>
  </div>
 
-<div class="title" style="margin-top: 10px; text-align: center; text-shadow: 2px 2px 5px gray; font-weight: bold;">Interview Questions Randomizer</div>
+<div class="title" style="margin-top: 10px; text-align: center; text-shadow: 2px 2px 5px gray; font-weight: bold;">Study Question Randomizer</div>
 
 <div id="questButton" style="position: absolute; top: 10px; right: 52px; display: none;">
  <button class="topButtons" value="Questions?" title="Open questions!" onclick="slideQuestUp(); hideRandomizer()">&nbsp;❓&nbsp;</button></a>
@@ -65,7 +65,10 @@ loadQuestions();
 <br>
 <div id="randomQs" class="randomQs">Your randomized questions<br>will show here!</div>
 <br>
-<div id="randomButton" class="actionButton" onclick="goRandomize()">RANDOMIZE!</div>
+<div id="answerButton" class="studyButton" style="left: 15%; display: none;" onclick="getAnswer()">ANSWER?</div>
+<div id="randomButton" class="studyButton" style="right: 15%;" onclick="goRandomize()">QUESTION!</div>
+<br>
+<br>
 <br>
 </div>
 
@@ -77,23 +80,52 @@ loadQuestions();
  <div class="closeQuestions" onclick="slideQuestDown(); showRandomizer()" title="Close questions!">X</div>
 <textarea id="questAmount" class="questAmount" rows="1" cols="auto" maxlength="5" style="display: none;">6</textarea>
 
-<div class="questList">01. <textarea id="q1" class="theQs" rows="1" cols="auto" placeholder="Question N°1" maxlength="150"></textarea><br></div>
-<div class="questList">02. <textarea id="q2" class="theQs" rows="1" cols="auto" placeholder="Question N°2" maxlength="150"></textarea><br></div>
-<div class="questList">03. <textarea id="q3" class="theQs" rows="1" cols="auto" placeholder="Question N°3" maxlength="150"></textarea><br></div>
-<div class="questList">04. <textarea id="q4" class="theQs" rows="1" cols="auto" placeholder="Question N°4" maxlength="150"></textarea><br></div>
-<div class="questList">05. <textarea id="q5" class="theQs" rows="1" cols="auto" placeholder="Question N°5" maxlength="150"></textarea><br></div>
-<div class="questList">06. <textarea id="q6" class="theQs" rows="1" cols="auto" placeholder="Question N°6" maxlength="150"></textarea><br></div>
+<div class="questList">01. <textarea id="q1" class="studyQs" rows="1" cols="auto" placeholder="Question N°1" maxlength="120"></textarea>
+<textarea id="a1" class="answers" rows="1" cols="auto" placeholder="Answer N°1" maxlength="60"></textarea><br></div>
+
+<div class="questList">02. <textarea id="q2" class="studyQs" rows="1" cols="auto" placeholder="Question N°2" maxlength="150"></textarea>
+<textarea id="a2" class="answers" rows="1" cols="auto" placeholder="Answer N°2" maxlength="60"></textarea><br></div>
+
+<div class="questList">03. <textarea id="q3" class="studyQs" rows="1" cols="auto" placeholder="Question N°3" maxlength="150"></textarea>
+<textarea id="a3" class="answers" rows="1" cols="auto" placeholder="Answer N°3" maxlength="60"></textarea><br></div>
+
+<div class="questList">04. <textarea id="q4" class="studyQs" rows="1" cols="auto" placeholder="Question N°4" maxlength="150"></textarea>
+<textarea id="a4" class="answers" rows="1" cols="auto" placeholder="Answer N°4" maxlength="60"></textarea><br></div>
+
+<div class="questList">05. <textarea id="q5" class="studyQs" rows="1" cols="auto" placeholder="Question N°5" maxlength="150"></textarea>
+<textarea id="a5" class="answers" rows="1" cols="auto" placeholder="Answer N°5" maxlength="60"></textarea><br></div>
+
+<div class="questList">06. <textarea id="q6" class="studyQs" rows="1" cols="auto" placeholder="Question N°6" maxlength="150"></textarea>
+<textarea id="a6" class="answers" rows="1" cols="auto" placeholder="Answer N°6" maxlength="60"></textarea><br></div>
 
 <!-- HIDDEN DIVS -->
-<div class="questList" id="list7" style="display: none;">07. <textarea id="q7" class="theQs" rows="1" cols="auto" placeholder="Question N°7" maxlength="150"></textarea><br></div>
-<div class="questList" id="list8" style="display: none;">08. <textarea id="q8" class="theQs" rows="1" cols="auto" placeholder="Question N°8" maxlength="150"></textarea><br></div>
-<div class="questList" id="list9" style="display: none;">09. <textarea id="q9" class="theQs" rows="1" cols="auto" placeholder="Question N°9" maxlength="150"></textarea><br></div>
-<div class="questList" id="list10" style="display: none;">10. <textarea id="q10" class="theQs" rows="1" cols="auto" placeholder="Question N°10" maxlength="150"></textarea><br></div>
-<div class="questList" id="list11" style="display: none;">11. <textarea id="q11" class="theQs" rows="1" cols="auto" placeholder="Question N°11" maxlength="150"></textarea><br></div>
-<div class="questList" id="list12" style="display: none;">12. <textarea id="q12" class="theQs" rows="1" cols="auto" placeholder="Question N°12" maxlength="150"></textarea><br></div>
-<div class="questList" id="list13" style="display: none;">13. <textarea id="q13" class="theQs" rows="1" cols="auto" placeholder="Question N°13" maxlength="150"></textarea><br></div>
-<div class="questList" id="list14" style="display: none;">14. <textarea id="q14" class="theQs" rows="1" cols="auto" placeholder="Question N°14" maxlength="150"></textarea><br></div>
-<div class="questList" id="list15" style="display: none;">15. <textarea id="q15" class="theQs" rows="1" cols="auto" placeholder="Question N°15" maxlength="150"></textarea><br></div>
+<div class="questList" id="list7" style="display: none;">07. <textarea id="q7" class="studyQs" rows="1" cols="auto" placeholder="Question N°7" maxlength="150"></textarea>
+<textarea id="a7" class="answers" rows="1" cols="auto" placeholder="Answer N°7" maxlength="60"></textarea><br></div>
+
+<div class="questList" id="list8" style="display: none;">08. <textarea id="q8" class="studyQs" rows="1" cols="auto" placeholder="Question N°8" maxlength="150"></textarea>
+<textarea id="a8" class="answers" rows="1" cols="auto" placeholder="Answer N°8" maxlength="60"></textarea><br></div>
+
+<div class="questList" id="list9" style="display: none;">09. <textarea id="q9" class="studyQs" rows="1" cols="auto" placeholder="Question N°9" maxlength="150"></textarea>
+<textarea id="a9" class="answers" rows="1" cols="auto" placeholder="Answer N°9" maxlength="60"></textarea><br></div>
+
+<div class="questList" id="list10" style="display: none;">10. <textarea id="q10" class="studyQs" rows="1" cols="auto" placeholder="Question N°10" maxlength="150"></textarea>
+<textarea id="a10" class="answers" rows="1" cols="auto" placeholder="Answer N°10" maxlength="60"></textarea><br></div>
+
+<div class="questList" id="list11" style="display: none;">11. <textarea id="q11" class="studyQs" rows="1" cols="auto" placeholder="Question N°11" maxlength="150"></textarea>
+<textarea id="a11" class="answers" rows="1" cols="auto" placeholder="Answer N°11" maxlength="60"></textarea><br></div>
+
+<div class="questList" id="list12" style="display: none;">12. <textarea id="q12" class="studyQs" rows="1" cols="auto" placeholder="Question N°12" maxlength="150"></textarea>
+<textarea id="a12" class="answers" rows="1" cols="auto" placeholder="Answer N°12" maxlength="60"></textarea><br></div>
+
+<div class="questList" id="list13" style="display: none;">13. <textarea id="q13" class="studyQs" rows="1" cols="auto" placeholder="Question N°13" maxlength="150"></textarea>
+<textarea id="a13" class="answers" rows="1" cols="auto" placeholder="Answer N°13" maxlength="60"></textarea><br></div>
+
+<div class="questList" id="list14" style="display: none;">14. <textarea id="q14" class="studyQs" rows="1" cols="auto" placeholder="Question N°14" maxlength="150"></textarea>
+<textarea id="a14" class="answers" rows="1" cols="auto" placeholder="Answer N°14" maxlength="60"></textarea><br></div>
+
+<div class="questList" id="list15" style="display: none;">15. <textarea id="q15" class="studyQs" rows="1" cols="auto" placeholder="Question N°15" maxlength="150"></textarea>
+<textarea id="a15" class="answers" rows="1" cols="auto" placeholder="Answer N°15" maxlength="60"></textarea><br></div>
+
 <br>
 <div id="goButton" class="actionButton" onclick="slideQuestDown(); showRandomizer()" title="Get ready to randomize!">GO!</div>
 </div>
@@ -134,13 +166,23 @@ if (i >= 7 && i <= 15 ) {document.getElementById("deleteQuestButton").style.disp
 
 
 <script type="text/javascript">
+var theAnswer;
+
 function goRandomize() {
+document.getElementById("answerButton").style.display = "block";
 var questAmount = document.getElementById('questAmount').value;
 var randomQs = document.getElementById("randomQs");
 
 // RANDOMIZING VARIABLE & UPDATING HTM ELEMENT!
 let random = "q" + Math.floor(Math.random()*(questAmount-0)+1);
-randomQs.innerHTML = "<b>Question N°" + random.slice(1) +":</b> " + document.getElementById(random).value;
+randomQs.innerHTML = "<b>Question N°" + random.slice(1) +":</b> " + document.getElementById(random).value ;
+theAnswer = "a" + random.slice(1);
+}
+
+function getAnswer() {
+var thisAnswer = theAnswer;
+var randomQs = document.getElementById("randomQs");
+document.getElementById("randomQs").innerHTML = "<b>Answer:</b> " + document.getElementById(thisAnswer).value + "!";
 }
 </script>
 
@@ -275,8 +317,12 @@ if (confirm('Clear all questions?')) {
 <script type="text/javascript">
 function clearQuestions() {
 // CLEAR QUESTIONS!
-const allQuestions = document.getElementsByClassName('theQs');
+const allQuestions = document.getElementsByClassName('studyQs');
 for(let eachQuestion of allQuestions) { eachQuestion.value = ""; }
+// CLEAR QUESTIONS!
+const allAnswers = document.getElementsByClassName('answers');
+for(let eachAnswer of allAnswers) { eachAnswer.value = ""; }
+
 // RESET AMOUNT OF QUESTIONS BY DEFAULT!
 var questAmount = document.getElementById('questAmount');
 questAmount.value = 6;
