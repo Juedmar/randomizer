@@ -200,16 +200,6 @@ textarea.answers {
  user-select: none;
 }
 
-/* Use a media query to add a break point at 800px: */
-@media screen and (max-width: 800px) {
- textarea.theQs { width: 82%; height: 32px; }
- .questList {margin-left: 6px;}
- textarea.studyQs { width: 60%; height: 42px; padding: 1px; margin-left: 1px; margin-right: 1px;}
- textarea.answers { width: 30%; height: 42px; padding: 1px; margin-left: 1px; margin-right: 1px;}
- div.questions {margin-bottom: 120px;}
- .randomQs {margin: auto; width: 75%;}
-}
-
 .topButtons {
  font-size: 14px;
  border: 2px solid darkgray;
@@ -263,3 +253,14 @@ textarea.answers {
  border: 1px solid gray;
  border-style: solid hidden hidden hidden; /* top right bottom left */
 }
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 800px) {
+ textarea.theQs { width: 82%; height: 32px; }
+ .questList {margin-left: 6px;}
+ textarea.studyQs { width: 60%; height: 42px; padding: 1px; margin-left: 1px; margin-right: 1px;}
+ textarea.answers { width: 30%; height: 42px; padding: 1px; margin-left: 1px; margin-right: 1px;}
+ div.questions {margin-bottom: 120px;}
+ .randomQs {margin: auto; width: 75%;}
+ .developer { margin-top: 5px; margin-left: 5px;}
+ .time { margin-top: 5px; margin-right: 5px;}
