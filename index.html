@@ -8,13 +8,15 @@
  <link rel="stylesheet" href="files/randomizer-style.css">
  <title>Question-Randomize-Inator!</title>
 
-<canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
 <!- CONNECTED TO JQUERY WITH THE FOLLOWING SCRIPT ->
 <script src="files/jquery-3.7.1.slim.js"></script>
 <!- https://stackoverflow.com/questions/39155511/html-save-text-in-textarea ->
 <!- https://jquery.com/download/ ->
+</head>
 
+<audio id="audio" src="media/shuffle.mp3" preload="auto">Your browser does not support the <code>audio</code> element.</audio>
 
+<canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
 <script type="text/javascript">
 window.onbeforeunload = function() {
      $('textarea').each(function(){
@@ -35,12 +37,8 @@ loadQuestions();
 }
 </script>
 
-</head>
 
-<audio id="audio" src="media/shuffle.mp3" preload="auto">Your browser does not support the <code>audio</code> element.</audio>
-
-
-<body onload="stupidCanvas();">
+<body>
 <div class="top">
 
 <div style="position: absolute; top: 10px; left: 10px;">
