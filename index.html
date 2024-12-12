@@ -279,8 +279,13 @@ if (confirm('Clear all questions?')) {
 
 <script type="text/javascript">
 function clearQuestions() {
+// CLEAR QUESTINS!
 const allQuestions = document.getElementsByClassName('theQs');
 for(let eachQuestion of allQuestions) { eachQuestion.value = ""; }
+// RESET AMOUNT OF QUESTIONS BY DEFAULT!
+var questAmount = document.getElementById('questAmount');
+questAmount.value = 6;
+window.location.reload();
 }
 </script>
 
