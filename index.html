@@ -12,7 +12,7 @@
 
 <audio id="audio" src="media/shuffle.mp3" preload="auto">Your browser does not support the <code>audio</code> element.</audio>
 
-
+<canvas style="display: none;">
 <!- CONNECTED TO JQUERY WITH THE FOLLOWING SCRIPT ->
 <script src="files/jquery-3.7.1.slim.js"></script>
 <!- https://stackoverflow.com/questions/39155511/html-save-text-in-textarea ->
@@ -38,6 +38,7 @@ window.onload = function() {
 loadQuestions();
 }
 </script>
+</canvas>
 
 <body>
 <div class="top">
@@ -111,6 +112,8 @@ loadQuestions();
   </div>
 </div>
 
+
+</body>
 
 
 <script type="text/javascript">
@@ -333,5 +336,5 @@ function refreshTime() {
   setInterval(refreshTime, 1000);
 </script>
 
-</body>
+
 </html>
