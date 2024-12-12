@@ -66,8 +66,8 @@ loadQuestions();
 <br>
 <div id="randomQs" class="randomQs">Your randomized questions<br>will show here!</div>
 <br>
-<div id="answerButton" class="studyButton" style="left: 15%; display: none;" onclick="getAnswer()">ANSWER?</div>
-<div id="randomButton" class="studyButton" style="right: 15%;" onclick="goRandomize()">QUESTION!</div>
+<div id="randomButton" class="studyButton" style="left: 15%;" title="Display randomized question!" onclick="goRandomize()">QUESTION!</div>
+<div id="answerButton" class="studyButton" style="right: 15%; color: black; background-color: #F9D5E5; display: none;" title="Display answer!" onclick="getAnswer()">ANSWER?</div>
 <br>
 <br>
 <br>
@@ -76,6 +76,7 @@ loadQuestions();
 
 <div class="questions" id="questions" style="display: block; visibility: visible;">
 <b>QUESTIONS:</b><br><br>
+<span style="position: absolute; top: 12px; right: 15%;"><b>ANSWERS:</b></span>
  <div class="addQuestButton" id="addQuestButton" onclick="showMoreQs()" title="Add a question!">+</div>
  <div class="deleteQuestButton" id="deleteQuestButton" onclick="showLessQs()" title="Delete last question!">-</div>
  <div class="closeButton" onclick="slideQuestDown(); showRandomizer()" title="Close questions!">X</div>

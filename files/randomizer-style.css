@@ -262,5 +262,5 @@ textarea.answers {
  textarea.answers { width: 30%; height: 42px; padding: 1px; margin-left: 1px; margin-right: 1px;}
  div.questions {margin-bottom: 120px;}
  .randomQs {margin: auto; width: 75%;}
- .developer { margin-top: 5px; margin-left: 5px;}
- .time { margin-top: 5px; margin-right: 5px;}
+ .developer { margin-top: 4px; margin-left: 4px;}
+ .time { margin-top: 4px; margin-right: 4px;}
