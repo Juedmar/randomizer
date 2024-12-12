@@ -61,6 +61,7 @@ loadQuestions();
 
 
 <div class="randomizer" id="randomizer" style="display: none; visibility: hidden;">
+<div class="closeButton" onclick="slideQuestUp(); hideRandomizer()" title="Close randomizer!">X</div>
 <b>QUESTION RANDOMIZER:</b><br>
 <br>
 <div id="randomQs" class="randomQs">Your randomized questions<br>will show here!</div>
@@ -74,7 +75,7 @@ loadQuestions();
 <b>QUESTIONS:</b><br><br>
  <div class="addQuestButton" id="addQuestButton" onclick="showMoreQs()" title="Add a question!">+</div>
  <div class="deleteQuestButton" id="deleteQuestButton" onclick="showLessQs()" title="Delete last question!">-</div>
- <div class="closeQuestions" onclick="slideQuestDown(); showRandomizer()" title="Close questions!">X</div>
+ <div class="closeButton" onclick="slideQuestDown(); showRandomizer()" title="Close questions!">X</div>
 <textarea id="questAmount" class="questAmount" rows="1" cols="auto" maxlength="5" style="display: none;">6</textarea>
 
 <div class="questList">01. <textarea id="q1" class="theQs" rows="1" cols="auto" placeholder="Question N°1" maxlength="150"></textarea><br></div>
