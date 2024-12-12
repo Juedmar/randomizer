@@ -205,8 +205,9 @@ textarea.answers {
 /* Use a media query to add a break point at 800px: */
 @media screen and (max-width: 800px) {
  textarea.theQs { width: 82%; height: 32px; }
- textarea.studyQs { width: 50%; height: 36px; }
- textarea.answers { width: 30%; height: 36px; }
+ .questList {margin-left: 6px;}
+ textarea.studyQs { width: 40%; height: 42px; }
+ textarea.answers { width: 30%; height: 42px; }
  div.questions {margin-bottom: 120px;}
  .randomQs {margin: auto; width: 75%;}
 }
