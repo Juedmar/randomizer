@@ -62,14 +62,11 @@ loadQuestions();
 <div class="randomizer" id="randomizer" style="display: none; visibility: hidden;">
 <b>QUESTION RANDOMIZER:</b><br>
 <br>
-<div id="randomQs" class="randomQs">
- The Random Questions!
- </div>
+<div id="randomQs" class="randomQs">Your randomized questions<br>will show here!</div>
 <br>
 <div id="goButton" class="goButton" onclick="goRandomize()">RANDOMIZE!</div>
 <br>
 </div>
-
 
 
 <div class="questions" id="questions" style="display: block; visibility: visible;">
@@ -142,8 +139,8 @@ var randomQs = document.getElementById("randomQs");
 
 // RANDOMIZING VARIABLE & UPDATING HTM ELEMENT!
 let random = "q" + Math.floor(Math.random()*(questAmount-0)+1);
-randomQs.innerHTML = document.getElementById(random).value;
-console.log(random);
+if (random.value === "" || random.value != "") { randomQs.innerHTML = "Write some questions first!"; }
+if (random.value !== "" ) { randomQs.innerHTML = document.getElementById(random).value; }
 
 // UPDATING QUESTIONS HTML TEXT!
 // randomQs.innerHTML = document.getElementById(r).value; WORKING - DO NOT EDIT!!
