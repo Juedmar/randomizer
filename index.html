@@ -99,9 +99,9 @@ loadQuestions();
 
 
 <div class="bottom">
-  <div class="developer" style="position: absolute; top: 8px; left: 12px; width: 50%;">🧠 By Juan Edo. Méndez <span id="theEmail" style="color: lightblue; cursor: help;" onclick="getEmail()" title="Click to copy e-mail?">(juan.mendez@upla.cl) 💡</span>
+  <div class="developer" style="position: absolute; top: 6px; left: 6px; width: 55%;">🧠 By Juan Edo. Méndez <span id="theEmail" style="color: lightblue; cursor: help;" onclick="getEmail()" title="Click to copy e-mail?">(juan.mendez@upla.cl) 💡</span>
   </div>
-  <div class="time" style="position: absolute; top: 8px; right: 12px; cursor: progress;">📅 Date: <span id="time">12/12/0000 - ⏰ Time: 00:00:00 ?</span>
+  <div class="time" style="position: absolute; top: 6px; right: 8px; cursor: progress;">📅 <span id="time">12/12/0000 - ⏰ 00:00:00 ?</span>
   </div>
 </div>
 
@@ -302,7 +302,7 @@ const d = new Date();
 function refreshTime() {
   const timeDisplay = document.getElementById("time");
   const dateString = new Date().toLocaleString(); d.toDateString();
-  const formattedString = dateString.replace(", ", " - ⏰ Time: ");
+  const formattedString = dateString.replace(", ", " - ⏰ ");
   timeDisplay.textContent = formattedString;
 }
   setInterval(refreshTime, 1000);
