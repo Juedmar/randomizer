@@ -63,8 +63,7 @@ body::-webkit-scrollbar { display: none; }
 
 .randomQs {
  margin: auto;
- width: 90%;
- height: 150px;
+ width: 82%;
  background-color: #FDFD96;
  color: black;
  border: 1px dashed darkgray;
