@@ -38,7 +38,14 @@ body::-webkit-scrollbar { display: none; }
  width: 100%;
  border: 1px solid gray;
  border-style: hidden hidden solid hidden; /* top right bottom left */
- font-size: min(18px, 3vw);
+}
+
+.title {
+ margin-top: 6px;
+ text-align: center;
+ text-shadow: 2px 2px 5px gray;
+ font-size: min(22px, 3vw);
+ font-weight: bold;
 }
 
 .questList {
@@ -74,14 +81,16 @@ body::-webkit-scrollbar { display: none; }
 }
 
 .trivia {
- position: absolute;
- top: 8px;
- left: 40%;
+ position: relative;
+ bottom: 6px;
+ margin: auto;
+ margin-top: -6px;
+ margin-bottom: 3px;
+ width: 20%;
  display: flex;
  justify-content: space-between;
- width: 24%;
- margin: auto;
  background-color: #FFFFFF99;
+ color: gray;
  text-align: center;
  border-radius: 12px;
  padding: 3px;
@@ -294,10 +303,12 @@ div#answerButton:active { color: #CCCCFF; background-color: #CF9FFF; }
 /* Use a media query to add a break point at 800px: */
 @media screen and (max-width: 800px) {
  textarea.theQs { width: 82%; height: 32px; }
- .questList {margin-left: 6px;}
  textarea.studyQs { width: 60%; height: 42px; padding: 1px; margin-left: 1px; margin-right: 1px;}
  textarea.answers { width: 30%; height: 42px; padding: 1px; margin-left: 1px; margin-right: 1px;}
  div.questions {margin-bottom: 120px;}
+ .title {margin-top: 12px;}
+ .questList {margin-left: 6px;}
  .randomQs {margin: auto; width: 75%;}
- .developer { margin-top: 4px; margin-left: 4px;}
- .time { margin-top: 4px; margin-right: 4px;}
+ .trivia {width: 44%;}
+ .developer {margin-top: 4px; margin-left: 4px;}
+ .time {margin-top: 4px; margin-right: 4px;}

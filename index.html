@@ -42,11 +42,11 @@ loadQuestions();
 <div class="top">
 
 <div style="position: absolute; top: 10px; left: 10px;">
- <a href="https://juedmar.github.io/assessment/interviews.html" target="Rubric"><button class="topButtons" title="Assessment Rubric!" value="Rubric!">📊</button></a>
  <a href="study.html"><button class="topButtons" title="Study Format!" value="Study!">📖</button></a>
+ <a href="https://juedmar.github.io/assessment/interviews.html" target="Rubric"><button class="topButtons" title="Assessment Rubric!" value="Rubric!">📊</button></a>
  </div>
 
-<div class="title" style="margin-top: 10px; text-align: center; text-shadow: 2px 2px 5px gray; font-weight: bold;">Interview Questions Randomizer</div>
+<div id="title" class="title">Interview Questions Randomizer</div>
 
 <div id="questButton" style="position: absolute; top: 10px; right: 52px; display: none;">
  <button class="topButtons" value="Questions?" title="Open questions!" onclick="slideQuestUp(); hideRandomizer()">&nbsp;❓&nbsp;</button></a>
@@ -69,8 +69,8 @@ loadQuestions();
 <div id="randomQs" class="randomQs">Your randomized questions<br>will show here!</div>
 <br>
 <div id="randomButton" class="actionButton" onclick="goRandomize()">RANDOMIZE!</div>
-<div id="audioOn" onclick="enableAudio()" style="cursor: pointer;" title="Enable sound effect!">🔈</div>
-<div id="audioOff" onclick="disableAudio()" style="cursor: pointer; display: none;" title="Disable sound effect!">🔊</div>
+<div id="audioOn" class="audioToggle" onclick="enableAudio()" style="cursor: pointer;" title="Enable sound effect!">🔈</div>
+<div id="audioOff" class="audioToggle" onclick="disableAudio()" style="cursor: pointer; display: none;" title="Disable sound effect!">🔊</div>
 </div>
 
 

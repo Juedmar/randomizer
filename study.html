@@ -14,7 +14,8 @@
 <!- https://jquery.com/download/ ->
 </head>
 
-<audio id="audio" src="media/shuffle.mp3" preload="auto">Your browser does not support the <code>audio</code> element.</audio>
+<audio id="shuffle" src="media/shuffle.mp3" preload="auto">Your browser does not support the <code>audio</code> element.</audio>
+<audio id="answer" src="media/answer.mp3" preload="auto">Your browser does not support the <code>audio</code> element.</audio>
 
 <script type="text/javascript">
 window.onbeforeunload = function() {
@@ -41,11 +42,10 @@ loadQuestions();
 <div class="top">
 
 <div style="position: absolute; top: 10px; left: 10px;">
- <a href="https://juedmar.github.io/assessment/interviews.html" target="Rubric"><button class="topButtons" title="Assessment Rubric!" value="Rubric!">📊</button></a>
  <a href="index.html"><button class="topButtons" title="Interview Format!" value="Interviews!">🗣️</button></a>
  </div>
 
-<div class="title" style="margin-top: 10px; text-align: center; text-shadow: 2px 2px 5px gray; font-weight: bold;">Randomizador de Preguntas de Estudio</div>
+<div id="title" class="title">Randomizador de Preguntas</div>
 
 <div id="questButton" style="position: absolute; top: 10px; right: 52px; display: none;">
  <button class="topButtons" value="Questions?" title="Open questions!" onclick="slideQuestUp(); hideRandomizer()">&nbsp;❓&nbsp;</button></a>
@@ -63,11 +63,6 @@ loadQuestions();
 
 <div class="randomizer" id="randomizer" style="display: none; visibility: hidden;">
  <div class="closeButton" onclick="slideQuestUp(); hideRandomizer()" title="Close randomizer!">X</div>
- <div id="trivia" class="trivia">
-  <span>Trivia:</span>
-  <span class="triviaIcons" title="Trivia General 1" onclick="triviaGeneral1()">🤓</span>
-  <span class="triviaIcons" title="Trivia General 2" onclick="triviaGeneral2()">🤓</span>
- </div>
  <b>RANDOMIZADOR:</b><br>
  <br>
  <div id="randomQs" class="randomQs">Sus preguntas aleatorias<br>aparecerán aquí!!</div>
@@ -89,54 +84,61 @@ loadQuestions();
  <div class="closeButton" onclick="slideQuestDown(); showRandomizer()" title="Close questions!">X</div>
 <textarea id="questAmount" class="questAmount" rows="1" cols="auto" maxlength="5" style="display: none;">6</textarea>
 
-<div class="questList">01. <textarea id="q1" class="studyQs" rows="1" cols="auto" placeholder="Question N°1"></textarea>
-<textarea id="a1" class="answers" rows="1" cols="auto" placeholder="Answer N°1"></textarea><br></div>
+<div class="questList">01. <textarea id="q1" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°1"></textarea>
+<textarea id="a1" class="answers" rows="1" cols="auto" placeholder="Respuesta N°1"></textarea><br></div>
 
-<div class="questList">02. <textarea id="q2" class="studyQs" rows="1" cols="auto" placeholder="Question N°2"></textarea>
-<textarea id="a2" class="answers" rows="1" cols="auto" placeholder="Answer N°2"></textarea><br></div>
+<div class="questList">02. <textarea id="q2" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°2"></textarea>
+<textarea id="a2" class="answers" rows="1" cols="auto" placeholder="Respuesta N°2"></textarea><br></div>
 
-<div class="questList">03. <textarea id="q3" class="studyQs" rows="1" cols="auto" placeholder="Question N°3"></textarea>
-<textarea id="a3" class="answers" rows="1" cols="auto" placeholder="Answer N°3"></textarea><br></div>
+<div class="questList">03. <textarea id="q3" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°3"></textarea>
+<textarea id="a3" class="answers" rows="1" cols="auto" placeholder="Respuesta N°3"></textarea><br></div>
 
-<div class="questList">04. <textarea id="q4" class="studyQs" rows="1" cols="auto" placeholder="Question N°4"></textarea>
-<textarea id="a4" class="answers" rows="1" cols="auto" placeholder="Answer N°4"></textarea><br></div>
+<div class="questList">04. <textarea id="q4" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°4"></textarea>
+<textarea id="a4" class="answers" rows="1" cols="auto" placeholder="Respuesta N°4"></textarea><br></div>
 
-<div class="questList">05. <textarea id="q5" class="studyQs" rows="1" cols="auto" placeholder="Question N°5"></textarea>
-<textarea id="a5" class="answers" rows="1" cols="auto" placeholder="Answer N°5"></textarea><br></div>
+<div class="questList">05. <textarea id="q5" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°5"></textarea>
+<textarea id="a5" class="answers" rows="1" cols="auto" placeholder="Respuesta N°5"></textarea><br></div>
 
-<div class="questList">06. <textarea id="q6" class="studyQs" rows="1" cols="auto" placeholder="Question N°6"></textarea>
-<textarea id="a6" class="answers" rows="1" cols="auto" placeholder="Answer N°6"></textarea><br></div>
+<div class="questList">06. <textarea id="q6" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°6"></textarea>
+<textarea id="a6" class="answers" rows="1" cols="auto" placeholder="Respuesta N°6"></textarea><br></div>
 
 <!-- HIDDEN DIVS -->
-<div class="questList" id="list7" style="display: none;">07. <textarea id="q7" class="studyQs" rows="1" cols="auto" placeholder="Question N°7"></textarea>
-<textarea id="a7" class="answers" rows="1" cols="auto" placeholder="Answer N°7"></textarea><br></div>
+<div class="questList" id="list7" style="display: none;">07. <textarea id="q7" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°7"></textarea>
+<textarea id="a7" class="answers" rows="1" cols="auto" placeholder="Respuesta N°7"></textarea><br></div>
 
-<div class="questList" id="list8" style="display: none;">08. <textarea id="q8" class="studyQs" rows="1" cols="auto" placeholder="Question N°8"></textarea>
-<textarea id="a8" class="answers" rows="1" cols="auto" placeholder="Answer N°8"></textarea><br></div>
+<div class="questList" id="list8" style="display: none;">08. <textarea id="q8" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°8"></textarea>
+<textarea id="a8" class="answers" rows="1" cols="auto" placeholder="Respuesta N°8"></textarea><br></div>
 
-<div class="questList" id="list9" style="display: none;">09. <textarea id="q9" class="studyQs" rows="1" cols="auto" placeholder="Question N°9"></textarea>
-<textarea id="a9" class="answers" rows="1" cols="auto" placeholder="Answer N°9"></textarea><br></div>
+<div class="questList" id="list9" style="display: none;">09. <textarea id="q9" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°9"></textarea>
+<textarea id="a9" class="answers" rows="1" cols="auto" placeholder="Respuesta N°9"></textarea><br></div>
 
-<div class="questList" id="list10" style="display: none;">10. <textarea id="q10" class="studyQs" rows="1" cols="auto" placeholder="Question N°10"></textarea>
-<textarea id="a10" class="answers" rows="1" cols="auto" placeholder="Answer N°10"></textarea><br></div>
+<div class="questList" id="list10" style="display: none;">10. <textarea id="q10" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°10"></textarea>
+<textarea id="a10" class="answers" rows="1" cols="auto" placeholder="Respuesta N°10"></textarea><br></div>
 
-<div class="questList" id="list11" style="display: none;">11. <textarea id="q11" class="studyQs" rows="1" cols="auto" placeholder="Question N°11"></textarea>
-<textarea id="a11" class="answers" rows="1" cols="auto" placeholder="Answer N°11"></textarea><br></div>
+<div class="questList" id="list11" style="display: none;">11. <textarea id="q11" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°11"></textarea>
+<textarea id="a11" class="answers" rows="1" cols="auto" placeholder="Respuesta N°11"></textarea><br></div>
 
-<div class="questList" id="list12" style="display: none;">12. <textarea id="q12" class="studyQs" rows="1" cols="auto" placeholder="Question N°12"></textarea>
-<textarea id="a12" class="answers" rows="1" cols="auto" placeholder="Answer N°12"></textarea><br></div>
+<div class="questList" id="list12" style="display: none;">12. <textarea id="q12" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°12"></textarea>
+<textarea id="a12" class="answers" rows="1" cols="auto" placeholder="Respuesta N°12"></textarea><br></div>
 
-<div class="questList" id="list13" style="display: none;">13. <textarea id="q13" class="studyQs" rows="1" cols="auto" placeholder="Question N°13"></textarea>
-<textarea id="a13" class="answers" rows="1" cols="auto" placeholder="Answer N°13"></textarea><br></div>
+<div class="questList" id="list13" style="display: none;">13. <textarea id="q13" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°13"></textarea>
+<textarea id="a13" class="answers" rows="1" cols="auto" placeholder="Respuesta N°13"></textarea><br></div>
 
-<div class="questList" id="list14" style="display: none;">14. <textarea id="q14" class="studyQs" rows="1" cols="auto" placeholder="Question N°14"></textarea>
-<textarea id="a14" class="answers" rows="1" cols="auto" placeholder="Answer N°14"></textarea><br></div>
+<div class="questList" id="list14" style="display: none;">14. <textarea id="q14" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°14"></textarea>
+<textarea id="a14" class="answers" rows="1" cols="auto" placeholder="Respuesta N°14"></textarea><br></div>
 
-<div class="questList" id="list15" style="display: none;">15. <textarea id="q15" class="studyQs" rows="1" cols="auto" placeholder="Question N°15"></textarea>
-<textarea id="a15" class="answers" rows="1" cols="auto" placeholder="Answer N°15"></textarea><br></div>
+<div class="questList" id="list15" style="display: none;">15. <textarea id="q15" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°15"></textarea>
+<textarea id="a15" class="answers" rows="1" cols="auto" placeholder="Respuesta N°15"></textarea><br></div>
 
 <br>
 <div id="goButton" class="actionButton" onclick="slideQuestDown(); showRandomizer()" title="Get ready to randomize!">COMENZAR!</div>
+<br>
+ <div id="trivia" class="trivia">
+  <span>Trivia:</span>
+  <span class="triviaIcons" title="Trivia General 1 (15)" onclick="triviaGeneral1()">🤓</span>
+  <span class="triviaIcons" title="Trivia General 2 (15)" onclick="triviaGeneral2()">🤓</span>
+  <span class="triviaIcons" title="Borrar preguntas" onclick="doDelete()">🗑️</span>
+ </div>
 </div>
 
 
@@ -177,6 +179,10 @@ if (i >= 7 && i <= 15 ) {document.getElementById("deleteQuestButton").style.disp
 
 
 <script type="text/javascript">
+// RANDOMIZE FUNCTION
+// RANDOMIZE FUNCTION
+// RANDOMIZE FUNCTION
+
 // GLOBAL AUDIO VARIABLE!
 var audioToggle;
 function enableAudio() {
@@ -201,18 +207,28 @@ var randomQs = document.getElementById("randomQs");
 
 // RANDOMIZING VARIABLE & UPDATING HTM ELEMENT!
 let random = "q" + Math.floor(Math.random()*(questAmount-0)+1);
-randomQs.innerHTML = "<b>Pregunta N°" + random.slice(1) +":</b> " + document.getElementById(random).value ;
+// randomQs.innerHTML = "<b>Pregunta N°" + random.slice(1) +":</b> " + document.getElementById(random).value ; // ORIGINAL CODE, NO TIMEOUT
+randomQs.innerHTML = "🎲";
+setTimeout(function() { randomQs.innerHTML = "<b>Pregunta N°" + random.slice(1) +":</b> " + document.getElementById(random).value }, 500)
 theAnswer = "a" + random.slice(1);
 
 // PLAY DICE SHUFFLE AUDIO!
-audios = document.querySelectorAll('audio');
-if (audioToggle === "On") { audio.play() }
+if (audioToggle === "On") { 
+ document.getElementById("shuffle").play();
+ }
 }
 
 function getAnswer() {
 var thisAnswer = theAnswer;
 var randomQs = document.getElementById("randomQs");
-document.getElementById("randomQs").innerHTML = "<b>Respuesta:</b> " + document.getElementById(thisAnswer).value + "!";
+// document.getElementById("randomQs").innerHTML = "<b>Respuesta:</b> " + document.getElementById(thisAnswer).value + "!"; // ORIGNAL ANSWER, NO TIMEOUT!
+document.getElementById("randomQs").innerHTML = "📖";
+setTimeout(function() { document.getElementById("randomQs").innerHTML = "<b>Respuesta:</b> " + document.getElementById(thisAnswer).value + "!" }, 400)
+
+// PLAY ANSWER EFFECT AUDIO!
+if (audioToggle === "On") { 
+ document.getElementById("answer").play();
+ }
 }
 </script>
 
@@ -314,14 +330,14 @@ const randomDiv = document.getElementById("randomizer");
 
 <script type="text/javascript">
 function triviaGeneral1() {
-if (confirm('¿Reemplazar preguntas con Trivia General (1)?')) {
+if (confirm('¿Reemplazar preguntas con Trivia General N°1 (15)?')) {
  resetTrivia();
  triviaGen1();
  }
 }
 
 function triviaGeneral2() {
-if (confirm('¿Reemplazar preguntas con Trivia General (2)?')) {
+if (confirm('¿Reemplazar preguntas con Trivia General N°2 (15)?')) {
  resetTrivia();
  triviaGen2();
  }
@@ -402,13 +418,13 @@ document.getElementById("q2").value = "¿Cuántos corazones tienen los pulpos?";
 document.getElementById("a2").value = "Estos animales se caracterizan por tener 3 corazones";
 
 document.getElementById("q3").value = "¿En qué año se produce la Revolución Francesa?";
-document.getElementById("a3").value = "Esta revolución estalla en el año 1789";
+document.getElementById("a3").value = "Esta revolución estalló en el año 1789";
 
 document.getElementById("q4").value = "¿De qué país es originario el café?";
 document.getElementById("a4").value = "El café es originario de Etiopía, país perteneciente al continente africano";
 
 document.getElementById("q5").value = "¿Cuántas naciones conforman el Reino Unido?";
-document.getElementById("a5").value = "El Reino Unido está formado Inglaterra, Escocia, Gales e Irlanda del Norte";
+document.getElementById("a5").value = "4 - El Reino Unido está formado Inglaterra, Escocia, Gales e Irlanda del Norte";
 
 document.getElementById("q6").value = "¿En qué año llegó el ser humano a la Luna?";
 document.getElementById("a6").value = "El ser humano llegó a la Luna en 1969";
@@ -425,11 +441,11 @@ document.getElementById("a9").value = "El muro de Berlín cayó en 1989";
 document.getElementById("q10").value = "¿Aproximadamente, qué porcentaje del peso de un individuo pertenece a sus huesos?";
 document.getElementById("a10").value = "Es un 12%, aproximadamente";
 
-document.getElementById("q11").value = "¿En qué año tuvo lugar la Revolución Francesa?";
-document.getElementById("a11").value = "Fue en el año 1789";
+document.getElementById("q11").value = "¿Cuántas franjas tiene la bandera de Estados Unidos?";
+document.getElementById("a11").value = "“The Star-Spangled Banner” o “Old Glory” cuenta con 13 franjas horizontales (7 rojas y 6 blancas), y un rectángulo azul con cincuenta estrellas blancas";
 
 document.getElementById("q12").value = "¿Quién inventó la imprenta?";
-document.getElementById("a12").value = "Fue Johannes Gutenberg desarrolló esta tecnología en el año 1400 en Mainz (Alemania de hoy)";
+document.getElementById("a12").value = "Johannes Gutenberg desarrolló esta tecnología en el año 1400 en Mainz (Alemania de hoy)";
 
 document.getElementById("q13").value = "¿Cómo se llama la parte del ojo que es sensible a la luz?";
 document.getElementById("a13").value = "Es la retina, ubicada en la parte interna del globo ocular";
@@ -437,8 +453,8 @@ document.getElementById("a13").value = "Es la retina, ubicada en la parte intern
 document.getElementById("q14").value = "¿Cuándo se celebra el famoso carnaval de Brasil?";
 document.getElementById("a14").value = "Este carnaval se celebra a finales de febrero o principios de marzo";
 
-document.getElementById("q15").value = "¿Qué son las arterias y cómo se diferencian de las venas?";
-document.getElementById("a15").value = "Las arterias transportan sangre rica en oxígeno del corazón hacia el cuerpo. Las venas, devuelven la sangre desoxigenada al corazón";
+document.getElementById("q15").value = "¿Cuál de los siguientes imperios no tenía un idioma escrito: Inca, Aztecas, Egipcios, Romanos?";
+document.getElementById("a15").value = "Los Incas no tuvieron un sistema de escritura alfabético, sino un sistema de cuerdas llamado “Quipu”";
 }
 </script>
 
@@ -519,7 +535,7 @@ function deactivate() { if (document.exitFullscreen) {
 <!- CHECK BEFORE DELETING ->
 <script type="text/javascript">
 function doDelete() {
-if (confirm('Clear all questions?')) {
+if (confirm('¿Desea borrar todas las preguntas?')) {
   clearQuestions()
   }
 }
