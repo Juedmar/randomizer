@@ -73,6 +73,27 @@ body::-webkit-scrollbar { display: none; }
  padding: 36px;
 }
 
+.trivia {
+ position: absolute;
+ top: 8px;
+ left: 40%;
+ display: flex;
+ justify-content: space-between;
+ width: 24%;
+ margin: auto;
+ background-color: #FFFFFF99;
+ text-align: center;
+ border-radius: 12px;
+ padding: 3px;
+ padding-left: 24px;
+ padding-right: 24px;
+}
+
+.triviaIcons {
+ cursor: pointer;
+ user-select: none;
+}
+
 .questions {
  position: relative;
  margin: auto;
@@ -170,6 +191,8 @@ textarea.answers {
  white-space: pre-wrap;
 }
 
+.audioToggle { width: 25px; }
+
 .actionButton {
  position: relative;
  width: 50%;
@@ -208,6 +231,11 @@ textarea.answers {
 
 .studyButton:hover { background-color: #4EAFFF; }
 .studyButton:active { background-color: red; }
+
+div#answerButton { color: #333; background-color: #F9D5E5; }
+
+div#answerButton:hover { color: #000; background-color: #E0B0FF; }
+div#answerButton:active { color: #CCCCFF; background-color: #CF9FFF; }
 
 .topButtons {
  font-size: 14px;
