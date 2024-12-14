@@ -1,14 +1,13 @@
 
-// RANDOMIZE FUNCTION
-// RANDOMIZE FUNCTION
-// RANDOMIZE FUNCTION
-
+// AUDIO SCRIPTS
+// AUDIO SCRIPTS
+// AUDIO SCRIPTS
 
 // GLOBAL AUDIO VARIABLE!
 var audioToggle;
 
 
-// AUDIO FUNCTIONS!
+// ENABLE / DISABLE AUDIO FUNCTIONS!
 function enableAudio() {
 document.getElementById("audioOn").style.display = "none";
 document.getElementById("audioOff").style.display = "block";
@@ -20,6 +19,12 @@ document.getElementById("audioOn").style.display = "block";
 document.getElementById("audioOff").style.display = "none";
 audioToggle = "Off";
 }
+
+
+
+// RANDOMIZE FUNCTION
+// RANDOMIZE FUNCTION
+// RANDOMIZE FUNCTION
 
 
 // GLOBAL ANSWER VARIABLE
