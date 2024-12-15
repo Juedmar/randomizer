@@ -38,17 +38,17 @@ if (confirm('¿Reemplazar preguntas con Trivia Histórica N°2 (15)?')) {
 
 // SCIENTIFIC TRIVIA 1 / CHECK FUNCTION!
 function triviaCiencias1() {
-if (confirm('¿Reemplazar preguntas con Trivia Científica (15)?')) {
+if (confirm('¿Reemplazar preguntas con Trivia Científica 1 (15)?')) {
  resetTrivia();
- triviaCiencias1();
+ triviaScience1();
  }
 }
 
 // SCIENTIFIC TRIVIA 2 / CHECK FUNCTION!
 function triviaCiencias2() {
-if (confirm('¿Reemplazar preguntas con Trivia Científica (15)?')) {
+if (confirm('¿Reemplazar preguntas con Trivia Científica 2 (15)?')) {
  resetTrivia();
- triviaCiencias2();
+ triviaScience2();
  }
 }
 
@@ -304,50 +304,50 @@ function triviaScience1() {
 document.getElementById("questAmount").value = "15";
 document.getElementById("randomQs").innerHTML = "Trivia Científica N°1 lista.<br>Puede iniciar las preguntas!";
 
-document.getElementById("q1").value = "";
-document.getElementById("a1").value = "";
+document.getElementById("q1").value = "¿Cuál es el gas más abundante en la atmósfera de la Tierra?";
+document.getElementById("a1").value = "Nitrógeno";
 
-document.getElementById("q2").value = "";
-document.getElementById("a2").value = "";
+document.getElementById("q2").value = "¿Cuántas vertebras posee el cuerpo humano?";
+document.getElementById("a2").value = "33 vértebras";
 
-document.getElementById("q3").value = "";
-document.getElementById("a3").value = "";
+document.getElementById("q3").value = "¿Cuál es el material natural más duro del planeta?";
+document.getElementById("a3").value = "El diamante";
 
-document.getElementById("q4").value = "";
-document.getElementById("a4").value = "";
+document.getElementById("q4").value = "¿Cuál es el hueso más grande en el cuerpo humano?";
+document.getElementById("a4").value = "El fémur";
 
-document.getElementById("q5").value = "";
-document.getElementById("a5").value = "";
+document.getElementById("q5").value = "¿Cuántos años tiene el universo?";
+document.getElementById("a5").value = "13,800 millones de años";
 
-document.getElementById("q6").value = "";
-document.getElementById("a6").value = "";
+document.getElementById("q6").value = "¿Cuál es la partícula más pequeña que existe en el universo?";
+document.getElementById("a6").value = "Los quarks";
 
-document.getElementById("q7").value = "";
-document.getElementById("a7").value = "";
+document.getElementById("q7").value = "¿Cuál es el metal que se encuentra en el centro de la tierra?";
+document.getElementById("a7").value = "El hierro";
 
-document.getElementById("q8").value = "";
-document.getElementById("a8").value = "";
+document.getElementById("q8").value = "¿Cuántos elementos químicos existen en la tabla periódica?";
+document.getElementById("a8").value = "118 elementos";
 
-document.getElementById("q9").value = "";
-document.getElementById("a9").value = "";
+document.getElementById("q9").value = "¿Los electrones son más pequeños que los átomos?";
+document.getElementById("a9").value = "Sí, lo son";
 
-document.getElementById("q10").value = "";
-document.getElementById("a10").value = "";
+document.getElementById("q10").value = "¿Qué significa ADN?";
+document.getElementById("a10").value = "Ácido desoxirribonucleico";
 
-document.getElementById("q11").value = "";
-document.getElementById("a11").value = "";
+document.getElementById("q11").value = "¿Quién escribió el libro “Breve historia del tiempo”?";
+document.getElementById("a11").value = "Stephen Hawking";
 
-document.getElementById("q12").value = "";
-document.getElementById("a12").value = "";
+document.getElementById("q12").value = "¿Cuál es el punto de ebullición del agua?";
+document.getElementById("a12").value = "100° Celcius";
 
-document.getElementById("q13").value = "";
-document.getElementById("a13").value = "";
+document.getElementById("q13").value = "¿La luz es una partícula o una onda?";
+document.getElementById("a13").value = "La luz es energía que se propagarse como radiación electromagnética, y se comporta como onda o como partícula según las condiciones de interacción con la materia";
 
-document.getElementById("q14").value = "";
-document.getElementById("a14").value = "";
+document.getElementById("q14").value = "¿Cuál es la galaxia espiral más cercana a la Vía Láctea?";
+document.getElementById("a14").value = "La galaxia Andrómeda";
 
-document.getElementById("q15").value = "";
-document.getElementById("a15").value = "";
+document.getElementById("q15").value = "¿Cada cuántos años pasa por la tierra el cometa Halley?";
+document.getElementById("a15").value = "Cada 75 años";
 
 loadQuestions();
 window.scrollTo(0, document.body.scrollHeight);
@@ -360,50 +360,50 @@ function triviaScience2() {
 document.getElementById("questAmount").value = "15";
 document.getElementById("randomQs").innerHTML = "Trivia Científica N°2 lista.<br>Puede iniciar las preguntas!";
 
-document.getElementById("q1").value = "";
-document.getElementById("a1").value = "";
+document.getElementById("q1").value = "¿Qué misión lunar Apolo fue la primera en llevar un vehículo lunar?";
+document.getElementById("a1").value = "La misión del Apolo 15";
 
-document.getElementById("q2").value = "";
-document.getElementById("a2").value = "";
+document.getElementById("q2").value = "¿Cómo se llamó el primer satélite artificial lanzado por la Unión Soviética en 1957?";
+document.getElementById("a2").value = "Sputnik 1";
 
-document.getElementById("q3").value = "";
-document.getElementById("a3").value = "";
+document.getElementById("q3").value = "¿Cuál es el tipo de sangre más raro?";
+document.getElementById("a3").value = "AB negativo";
 
-document.getElementById("q4").value = "";
-document.getElementById("a4").value = "";
+document.getElementById("q4").value = "La tierra tiene tres capas que son diferentes debido a las diferentes temperaturas. ¿Cuáles son sus tres capas?";
+document.getElementById("a4").value = "Corteza, manto y núcleo";
 
-document.getElementById("q5").value = "";
-document.getElementById("a5").value = "";
+document.getElementById("q5").value = "¿Qién propuso que la Tierra no era el centro del universo y que el Sol estaba en el centro de nuestro sistema solar?";
+document.getElementById("a5").value = "Nicolás Copérnico";
 
-document.getElementById("q6").value = "";
-document.getElementById("a6").value = "";
+document.getElementById("q6").value = "¿Qué planeta gira más rápido, completando una rotación completa en solo 10 horas?";
+document.getElementById("a6").value = "Júpiter";
 
-document.getElementById("q7").value = "";
-document.getElementById("a7").value = "";
+document.getElementById("q7").value = "¿Cuántos dientes tiene un ser humano adulto?";
+document.getElementById("a7").value = "32";
 
-document.getElementById("q8").value = "";
-document.getElementById("a8").value = "";
+document.getElementById("q8").value = "¿En qué parte del cuerpo humano se encuentran la mayoría de las glándulas sudoríparas?";
+document.getElementById("a8").value = "Parte inferior de los pies";
 
-document.getElementById("q9").value = "";
-document.getElementById("a9").value = "";
+document.getElementById("q9").value = "Aproximadamente, ¿cuánto tarda la luz del sol en llegar a la Tierra: 8 minutos, 8 horas u 8 días?";
+document.getElementById("a9").value = "8 minutos";
 
-document.getElementById("q10").value = "";
-document.getElementById("a10").value = "";
+document.getElementById("q10").value = "¿A qué temperatura son iguales Celsius y Fahrenheit?";
+document.getElementById("a10").value = "Ambas escalas coinciden a lo -40 grados";
 
-document.getElementById("q11").value = "";
-document.getElementById("a11").value = "";
+document.getElementById("q11").value = "¿Cuáles son los cuatro metales preciosos primarios?";
+document.getElementById("a11").value = "Oro, plata, platino y paladio";
 
-document.getElementById("q12").value = "";
-document.getElementById("a12").value = "";
+document.getElementById("q12").value = "Esta parte del cerebro se ocupa de la audición y el lenguaje.";
+document.getElementById("a12").value = "El lóbulo temporal";
 
-document.getElementById("q13").value = "";
-document.getElementById("a13").value = "";
+document.getElementById("q13").value = "Este médico griego fue el primero en llevar registros de las historias de sus pacientes.";
+document.getElementById("a13").value = "Hipócrates";
 
-document.getElementById("q14").value = "";
-document.getElementById("a14").value = "";
+document.getElementById("q14").value = "¿Cuál es la velocidad de la luz en el vacío (de forma aproximada, en kilómetros por segundo)?";
+document.getElementById("a14").value = "Aproximadamente 299,792,458 metros/segundo (300,000 km/segundo)";
 
-document.getElementById("q15").value = "";
-document.getElementById("a15").value = "";
+document.getElementById("q15").value = "¿Qué nombre tiene un tipo de reacción química en la que se libera calor?";
+document.getElementById("a15").value = "Exotérmica";
 
 loadQuestions();
 window.scrollTo(0, document.body.scrollHeight);
@@ -477,5 +477,6 @@ setTimeout(function() { goButton.innerHTML = "Comenzando en 2!" }, 2000);
 setTimeout(function() { goButton.innerHTML = "Comenzando en 1!" }, 3000);
 setTimeout(function() { slideQuestDown(); showRandomizer() }, 4000);
 setTimeout(function() { goButton.innerHTML = "Comenzar!"; goButton.style.backgroundColor = "" }, 4500);
+enableAudio();
 }
 

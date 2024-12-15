@@ -40,6 +40,9 @@ for(let eachAnswer of allAnswers) { eachAnswer.value = ""; }
 var questAmount = document.getElementById('questAmount');
 questAmount.value = 6;
 window.location.reload();
+
+// DISABLE AUDIO
+disableAudio();
 }
 
 
