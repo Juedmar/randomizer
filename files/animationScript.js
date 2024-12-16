@@ -42,4 +42,8 @@ const randomDiv = document.getElementById("randomizer");
  setTimeout(function() { randomDiv.style.width = '25%' }, 100);
  setTimeout(function() { randomDiv.style.visibility = "hidden"}, 800);
  setTimeout(function() { randomDiv.style.display = "none"}, 1200);
+
+var answerButton = document.getElementById("answerButton");
+if (answerButton != null) {answerButton.style.display = "none"}
+
 }
