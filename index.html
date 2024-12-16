@@ -75,10 +75,11 @@ loadQuestions();
 
 
 <div class="questions" id="questions" style="display: block; visibility: visible;">
-<b>QUESTIONS:</b><br><br>
+<b><span style="padding-left: 75px;">QUESTIONS:</b></span><br><br>
  <div class="addQuestButton" id="addQuestButton" onclick="showMoreQs()" title="Add a question!">➕</div>
  <div class="deleteQuestButton" id="deleteQuestButton" onclick="showLessQs()" title="Delete last question!">➖</div>
  <div class="closeButton" onclick="slideQuestDown(); showRandomizer()" title="Close questions!">❌</div>
+
 <textarea id="questAmount" class="questAmount" rows="1" cols="auto" maxlength="5" style="display: none;">6</textarea>
 
 <div class="questList">01. <textarea id="q1" class="theQs" rows="1" cols="auto" placeholder="Question N°1" maxlength="150"></textarea><br></div>
