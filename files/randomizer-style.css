@@ -122,24 +122,6 @@ body::-webkit-scrollbar { display: none; }
  padding: 12px;
 }
 
-.closeButton {
- position: absolute;
- top: 6px;
- right: 8px;
- height: 24px;
- color: gray;
- background-color: pink;
- border: 1px solid gray;
- border-radius: 3px;
- padding-top: 3px;
- padding-left: 6px;
- padding-right: 6px;
- cursor: pointer;
-}
-
-.closeButton:hover { color: red; }
-.closeButton:active { color: yellow; background-color: red; }
-
 textarea.questAmount {
  width: 20px;
  height: 16px;
@@ -261,39 +243,67 @@ div#answerButton:active { color: #CCCCFF; background-color: #CF9FFF; }
 
 .addQuestButton {
  position: absolute;
- top: 10px;
- left: 124px;
+ top: 8px;
  width: 18px;
- height: 26px;
+ height: 16px;
+ font-size: 11px;
+ text-align: center;
  background-color: lightgreen;
- font-size: 14px; color: gray;
  border: 1px solid gray;
  border-radius: 6px;
- padding-top: 4px;
+ padding-top: 3px;
  padding-left: 6px;
  padding-right: 6px;
+ padding-bottom: 3px;
  cursor: pointer;
- text-align: center;
  user-select: none;
 }
 
+.addQuestButton:hover { background-color: #98FB98; }  /* background-color: #98FB98; Green Mint */
+.addQuestButton:active {  background-color: #50C878; }  /* background-color: #50C878; Green Emerald */
+
+
 .deleteQuestButton {
  position: absolute;
- top: 10px;
- left: 162px;
+ top: 8px;
+ left: 48px;
  width: 18px;
- height: 26px;
- background-color: pink;
- font-size: 14px; color: gray;
+ height: 16px;
+ font-size: 11px;
+ text-align: center;
+ background-color: #F3A5F3; /* Violet (80%): #EE82EE; */
  border: 1px solid gray;
  border-radius: 6px;
- padding-top: 4px;
+ padding-top: 3px;
  padding-left: 6px;
  padding-right: 6px;
+ padding-bottom: 3px;
  cursor: pointer;
- text-align: center;
  user-select: none;
 }
+
+.deleteQuestButton:hover {  background-color: #EE82EE; }  /* Violte (72%): #FF00FF; */
+.deleteQuestButton:active {  background-color: #FF00FF; } /* Magenta: #FF00FF; */
+
+.closeButton {
+ position: absolute;
+ top: 6px;
+ right: 8px;
+ height: 16px;
+ font-size: 12px;
+ background-color: pink;
+ border: 1px solid gray;
+ border-radius: 3px;
+ padding-top: 3px;
+ padding-left: 6px;
+ padding-right: 6px;
+ padding-bottom: 3px;
+ cursor: pointer;
+}
+
+.closeButton:hover { background-color: yellow; }
+.closeButton:active { background-color: red; }
+
 
 .bottom {
  position: fixed;
