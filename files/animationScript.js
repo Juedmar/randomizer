@@ -43,6 +43,7 @@ const randomDiv = document.getElementById("randomizer");
  setTimeout(function() { randomDiv.style.visibility = "hidden"}, 800);
  setTimeout(function() { randomDiv.style.display = "none"}, 1200);
 
+// HIDDING ANSWER BUTTON!
 var answerButton = document.getElementById("answerButton");
 if (answerButton != null) {answerButton.style.display = "none"}
 

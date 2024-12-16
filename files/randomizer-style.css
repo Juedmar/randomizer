@@ -334,11 +334,17 @@ div#answerButton:active { color: #CCCCFF; background-color: #CF9FFF; }
  textarea.theQs { width: 82%; height: 32px; }
  textarea.studyQs { width: 60%; height: 42px; padding: 1px; margin-left: 1px; margin-right: 1px;}
  textarea.answers { width: 30%; height: 42px; padding: 1px; margin-left: 1px; margin-right: 1px;}
- div.questions {margin-bottom: 120px;}
- .answerTitle {right: 14%;}
+
  .title {margin-top: 12px;}
+ .answerTitle {right: 14%;}
+ .addQuestButton { height: 12px; padding-bottom: 0px; }
+ .deleteQuestButton { height: 12px; padding-bottom: 0px; }
+
+ div.questions {margin-bottom: 120px;}
  .questList {margin-left: 6px;}
  .randomQs {margin: auto; width: 75%;}
+
  .trivia {width: 60%;}
+
  .developer {margin-top: 4px; margin-left: 4px;}
  .time {margin-top: 4px; margin-right: 4px;}

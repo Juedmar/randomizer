@@ -29,7 +29,6 @@ audioToggle = "Off";
 // GLOBAL ANSWER VARIABLE
 var theAnswer;
 
-
 function goRandomize() {
 var answerButton = document.getElementById("answerButton");
 if (answerButton != null) {answerButton.style.display = "block" };
