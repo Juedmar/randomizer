@@ -40,6 +40,17 @@ body::-webkit-scrollbar { display: none; }
  border-style: hidden hidden solid hidden; /* top right bottom left */
 }
 
+.topButtons {
+ font-size: 14px;
+ border: 2px solid darkgray;
+ border-radius: 5px 5px;
+ cursor: pointer;
+}
+
+.topButtons:hover { background-color: #CFE0E8; } /* Grayish Blue: #CFE0E8; */
+.topButtons:active { background-color: lightblue; }
+
+
 .title {
  margin-top: 6px;
  text-align: center;
@@ -234,12 +245,6 @@ div#answerButton { color: #333; background-color: #F9D5E5; }
 div#answerButton:hover { color: #000; background-color: #E0B0FF; }
 div#answerButton:active { color: #CCCCFF; background-color: #CF9FFF; }
 
-.topButtons {
- font-size: 14px;
- border: 2px solid darkgray;
- border-radius: 5px 5px;
- cursor: pointer;
-}
 
 .addQuestButton {
  position: absolute;
