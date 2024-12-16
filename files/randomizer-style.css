@@ -63,6 +63,8 @@ body::-webkit-scrollbar { display: none; }
  margin-left: 12px;
 }
 
+.answerTitle { position: absolute; top: 12px; right: 22%; }
+
 .randomizer {
  position: relative;
  top: 60px;
@@ -323,12 +325,17 @@ div#answerButton:active { color: #CCCCFF; background-color: #CF9FFF; }
  border-style: solid hidden hidden hidden; /* top right bottom left */
 }
 
+
 /* Use a media query to add a break point at 800px: */
+/* Use a media query to add a break point at 800px: */
+/* Use a media query to add a break point at 800px: */
+
 @media screen and (max-width: 800px) {
  textarea.theQs { width: 82%; height: 32px; }
  textarea.studyQs { width: 60%; height: 42px; padding: 1px; margin-left: 1px; margin-right: 1px;}
  textarea.answers { width: 30%; height: 42px; padding: 1px; margin-left: 1px; margin-right: 1px;}
  div.questions {margin-bottom: 120px;}
+ .answerTitle {right: 14%;}
  .title {margin-top: 12px;}
  .questList {margin-left: 6px;}
  .randomQs {margin: auto; width: 75%;}

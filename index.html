@@ -14,7 +14,7 @@
 <!- https://jquery.com/download/ ->
 </head>
 
-<audio id="audio" src="media/shuffle.mp3" preload="auto">Your browser does not support the <code>audio</code> element.</audio>
+<audio id="shuffle" src="media/shuffle.mp3" preload="auto">Your browser does not support the <code>audio</code> element.</audio>
 
 <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
 <script type="text/javascript">
@@ -100,7 +100,7 @@ loadQuestions();
 <div class="questList" id="list14" style="display: none;">14. <textarea id="q14" class="theQs" rows="1" cols="auto" placeholder="Question N°14" maxlength="150"></textarea><br></div>
 <div class="questList" id="list15" style="display: none;">15. <textarea id="q15" class="theQs" rows="1" cols="auto" placeholder="Question N°15" maxlength="150"></textarea><br></div>
 <br>
-<div id="goButton" class="actionButton" onclick="slideQuestDown(); showRandomizer()" title="Get ready to randomize!">GO!</div>
+<div id="goButton" class="actionButton" onclick="slideQuestDown(); showRandomizer()" title="Get ready to randomize!">START!</div>
 </div>
 
 
@@ -111,228 +111,14 @@ loadQuestions();
   </div>
 </div>
 
-
 </body>
 
 
-<script type="text/javascript">
-function loadQuestions() {
-var questAmount = document.getElementById('questAmount').value;
-var i = questAmount;
-var theQs = parseInt(i) - parseInt(6);
-var start = parseInt(6);
-var end = parseInt(15);
+<!-- FUNCTION SCRIPTS -->
+<script type="text/javascript" src="files/loadQsScript.js"></script>
+<script type="text/javascript" src="files/randomizeScript.js"></script>
+<script type="text/javascript" src="files/animationScript.js"></script>
+<script type="text/javascript" src="files/miscScript.js"></script>
 
-// DISPLAY HIDDEN QUESTIONS (BY AMOUNT PREVIOUSLY SET)!
-if (i >= 7 && i <= end) {
- for (let step = 6; step < end; step++) {
-  start++;
-  var thisQuest = "list" + start;
-  document.getElementById(thisQuest).style.display = "block";
-  end = i;
-  }
- }
-
-// DISPLAYING & HIDDING BUTTONS!
-if (i<= 6) {document.getElementById("deleteQuestButton").style.display = "none"}
-if (i >= 7 && i <= 15 ) {document.getElementById("deleteQuestButton").style.display = "block"}
-}
-</script>
-
-
-
-<script type="text/javascript">
-var audioToggle;
-function enableAudio() {
-document.getElementById("audioOn").style.display = "none";
-document.getElementById("audioOff").style.display = "block";
-audioToggle = "On";
-}
-
-function disableAudio() {
-document.getElementById("audioOn").style.display = "block";
-document.getElementById("audioOff").style.display = "none";
-audioToggle = "Off";
-}
-
-function goRandomize() {
-var questAmount = document.getElementById('questAmount').value;
-var randomQs = document.getElementById("randomQs");
-
-// RANDOMIZING VARIABLE & UPDATING HTM ELEMENT!
-let random = "q" + Math.floor(Math.random()*(questAmount-0)+1);
-randomQs.innerHTML = "<b>Question N°" + random.slice(1) +":</b> " + document.getElementById(random).value;
-
-// PLAY DICE SHUFFLE AUDIO!
-audios = document.querySelectorAll('audio');
-if (audioToggle === "On") { audio.play() }
-}
-</script>
-
-
-
-<script type="text/javascript">
-function showMoreQs() {
-var questAmount = document.getElementById('questAmount').value;
-
-var i = questAmount;
-++i; // UPDATING AMOUNT OF LISTS!
-
-// CHECKING IF VALUE IS BETWEEN 7 AND 15!
-if (i >= 7 && i <= 15 ) {
- document.getElementById('questAmount').value = i;
- var thisQuest = "list" + i;
- document.getElementById(thisQuest).style.display = "block";
- document.getElementById("deleteQuestButton").style.display = "block";
- }
-if (i == 15 ) {document.getElementById("addQuestButton").style.display = "none"}
-}
-</script>
-
-
-<script type="text/javascript">
-function showLessQs() {
-var questAmount = document.getElementById('questAmount').value;
-
-var i = questAmount;
-
-// CHECKING IF VALUE IS BETWEEN 7 AND 15!
-if (i >= 7 && i <= 15) {
- var thisQuest = "list" + i;
- document.getElementById(thisQuest).style.display = "none";
- document.getElementById("addQuestButton").style.display = "block";
- // UPDATING AMOUNT OF LISTS!
- i = i - 1; // UPDATING AMOUNT OF LISTS
- document.getElementById('questAmount').value = i;
- }
-if (i == 6 ) {document.getElementById("deleteQuestButton").style.display = "none"}
-if (i == 15 ) {document.getElementById("addQuestButton").style.display = "none"}
-}
-</script>
-
-
-
-
-<script type="text/javascript">
-function slideQuestDown() {
-const questButton = document.getElementById("questButton");
-const questDiv = document.getElementById("questions");
-const clearButton = document.getElementById("clearButton");
-
-for (var i = 10; i < 1000; i++) {
-  (function(i) {
-    setTimeout(function() {
-      questDiv.style.top = i + "px";
-    }, 100);
-  })(i);
- }
-setTimeout(function() {
- questDiv.style.display = 'none';
- questButton.style.display = 'block';
- clearButton.style.display = 'none';
- }, 850)
-}
-</script>
-
-
-<script type="text/javascript">
-function showRandomizer() {
-const randomDiv = document.getElementById("randomizer");
-const randomQuests = document.getElementById("randomQs");
- setTimeout(function() { randomDiv.style.display = "block"}, 100);
- setTimeout(function() { randomDiv.style.width = '85%'; randomQuests.style.width = '80%'; }, 400);
- setTimeout(function() { randomDiv.style.visibility = 'visible'}, 800);
-}
-</script>
-
-
-<script type="text/javascript">
-function slideQuestUp() {
-const questButton = document.getElementById("questButton");
-const clearButton = document.getElementById("clearButton");
-const questDiv = document.getElementById("questions");
- setTimeout(function() { questDiv.style.display = 'block';}, 200);
- setTimeout(function() { questDiv.style.top = '60px'; questButton.style.display = 'none'; clearButton.style.display = 'block';}, 300);
-}
-</script>
-
-<script type="text/javascript">
-function hideRandomizer() {
-const randomDiv = document.getElementById("randomizer");
-const randomQuests = document.getElementById("randomQs");
- setTimeout(function() { randomDiv.style.width = '25%'; randomQuests.style.width = '12%'; }, 100);
- setTimeout(function() { randomDiv.style.visibility = "hidden"}, 800);
- setTimeout(function() { randomDiv.style.display = "none"}, 1200);
-}
-</script>
-
-
-
-<script type="text/javascript">
-// ENTER FULL SCREEN
-function activate(ele) { if (ele.requestFullscreen) {
-  ele.requestFullscreen();
-  document.getElementById('fullscreen').style.display = 'none';
-  document.getElementById('minimize').style.display = 'inline';
-  }
-}
-
-// EXIT FULL SCREEN
-function deactivate() { if (document.exitFullscreen) {
- document.exitFullscreen();
- document.getElementById('fullscreen').style.display = 'none';
- document.getElementById('fullscreen').style.display = 'inline';
- document.getElementById('minimize').style.display = 'none';
- }
-}
-</script>
-
-
-
-<!- CHECK BEFORE DELETING ->
-<script type="text/javascript">
-function doDelete() {
-if (confirm('Clear all questions?')) {
-  clearQuestions()
-  }
-}
-</script>
-
-
-<script type="text/javascript">
-function clearQuestions() {
-// CLEAR QUESTIONS!
-const allQuestions = document.getElementsByClassName('theQs');
-for(let eachQuestion of allQuestions) { eachQuestion.value = ""; }
-// RESET AMOUNT OF QUESTIONS BY DEFAULT!
-var questAmount = document.getElementById('questAmount');
-questAmount.value = 6;
-window.location.reload();
-}
-</script>
-
-
-
-<script type="text/javascript">
-function getEmail() {
-  var thisEmail = document.getElementById("theEmail");
-  navigator.clipboard.writeText("juan.mendez@upla.cl");
-  thisEmail.innerHTML = "(Copying the e-mail!) ⏳"; thisEmail.style.color = '#FFE000'; thisEmail.style.cursor = "progress"; thisEmail.setAttribute('title',"Copying e-mail!");
-  setTimeout(function() { thisEmail.innerHTML = "(E-mail has been copied!) 👍"; thisEmail.style.color = 'blue'; thisEmail.style.cursor = "grab"; thisEmail.setAttribute('title',"E-mail has been copied!");}, 5000)
-  setTimeout(function() { thisEmail.innerHTML = "(juan.mendez@upla.cl) 💡"; thisEmail.style.color = 'lightblue'; thisEmail.style.cursor = "help"; thisEmail.setAttribute('title',"Click to copy again?");}, 9000)
-}
-</script>
-
-
-<script type="text/javascript">
-const d = new Date();
-function refreshTime() {
-  const timeDisplay = document.getElementById("time");
-  const dateString = new Date().toLocaleString(); d.toDateString();
-  const formattedString = dateString.replace(", ", " - ⏰ ");
-  timeDisplay.textContent = formattedString;
-}
-  setInterval(refreshTime, 1000);
-</script>
 
 </html>

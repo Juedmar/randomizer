@@ -31,7 +31,9 @@ var theAnswer;
 
 
 function goRandomize() {
-document.getElementById("answerButton").style.display = "block";
+var answerButton = document.getElementById("answerButton");
+if (answerButton != null) {answerButton.style.display = "block" };
+
 var questAmount = document.getElementById('questAmount').value;
 var randomQs = document.getElementById("randomQs");
 
@@ -41,6 +43,7 @@ let random = "q" + Math.floor(Math.random()*(questAmount-0)+1);
 randomQs.innerHTML = "🎲";
 setTimeout(function() { randomQs.innerHTML = "<b>Pregunta N°" + random.slice(1) +":</b> " + document.getElementById(random).value }, 500)
 theAnswer = "a" + random.slice(1);
+
 
 // PLAY DICE SHUFFLE AUDIO!
 if (audioToggle === "On") { 

@@ -77,9 +77,10 @@ loadQuestions();
 
 
 <div class="questions" id="questions" style="display: block; visibility: visible;">
-<b><span style="padding-left: 75px;">QUESTIONS:</b></span><br><br>
+<span style="padding-left: 75px;"><b>Preguntas:</b></span><br><br>
  <div class="addQuestButton" id="addQuestButton" onclick="showMoreQs()" title="Add a question!">➕</div>
  <div class="deleteQuestButton" id="deleteQuestButton" onclick="showLessQs()" title="Delete last question!">➖</div>
+<span class="answerTitle"><b>Respuestas:</b></span>
  <div class="closeButton" onclick="slideQuestDown(); showRandomizer()" title="Close questions!">❌</div>
 
 <textarea id="questAmount" class="questAmount" rows="1" cols="auto" maxlength="5" style="display: none;">6</textarea>
@@ -153,6 +154,7 @@ loadQuestions();
   </div>
 </div>
 
+</body>
 
 
 <script type="text/javascript">
@@ -178,7 +180,6 @@ if (i<= 6) {document.getElementById("deleteQuestButton").style.display = "none"}
 if (i >= 7 && i <= 15 ) {document.getElementById("deleteQuestButton").style.display = "block"}
 }
 </script>
-
 
 
 <script type="text/javascript">
@@ -219,15 +220,12 @@ if (i == 15 ) {document.getElementById("addQuestButton").style.display = "none"}
 </script>
 
 
-
 <!-- FUNCTION SCRIPTS -->
-<script src="files/randomizeScripts.js"></script>
-<script src="files/animationScripts.js"></script>
-<script src="files/triviaScripts.js"></script>
-<script src="files/miscScripts.js"></script>
+<script type="text/javascript" src="files/loadQsScript.js"></script>
+<script type="text/javascript" src="files/randomizeScript.js"></script>
+<script type="text/javascript" src="files/animationScript.js"></script>
+<script type="text/javascript" src="files/triviaScript.js"></script>
+<script type="text/javascript" src="files/miscScript.js"></script>
 
 
-
-
-</body>
 </html>

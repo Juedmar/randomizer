@@ -29,16 +29,30 @@ if (confirm('¿Desea borrar todas las preguntas?')) {
 
 // DELETING QUESTIONS!
 function clearQuestions() {
-// CLEAR QUESTIONS!
-const allQuestions = document.getElementsByClassName('studyQs');
-for(let eachQuestion of allQuestions) { eachQuestion.value = ""; }
-// CLEAR ANSWERS!
+
+// CLEAR INTERVIEW QUESTIONS!
+const theQs = document.getElementsByClassName('theQs');
+if (theQs != null) {
+ for(let eachQuestion of theQs) { eachQuestion.value = "" }
+};
+
+// CLEAR STUDY QUESTIONS!
+const studyQs = document.getElementsByClassName('studyQs');
+if (studyQs != null) {
+ for(let eachQuestion of studyQs) { eachQuestion.value = "" }
+};
+
+// CLEAR STUDY ANSWERS!
 const allAnswers = document.getElementsByClassName('answers');
-for(let eachAnswer of allAnswers) { eachAnswer.value = ""; }
+if (allAnswers != null) {
+ for(let eachAnswer of allAnswers) { eachAnswer.value = ""; }
+};
 
 // RESET AMOUNT OF QUESTIONS BY DEFAULT!
 var questAmount = document.getElementById('questAmount');
 questAmount.value = 6;
+
+// RELOAD PAGE
 window.location.reload();
 
 // DISABLE AUDIO
