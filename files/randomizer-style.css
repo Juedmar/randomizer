@@ -337,9 +337,9 @@ div#answerButton:active { color: #CCCCFF; background-color: #CF9FFF; }
 
  .title {margin-top: 12px;}
  .answerTitle {right: 14%;}
- .addQuestButton { height: 12px; padding-top: 1px; padding-bottom: 2px; }
- .deleteQuestButton { height: 12px; padding-top: 1px; padding-bottom: 2px; }
- .closeButton { height: 12px; padding-top: 1px; padding-bottom: 2px; }
+ .addQuestButton { height: 12px; padding-bottom: 0px; }
+ .deleteQuestButton { height: 12px; padding-bottom: 0px; }
+ .closeButton { height: 12px; padding-bottom: 0px; }
 
  div.questions {margin-bottom: 120px;}
  .questList {margin-left: 6px;}
