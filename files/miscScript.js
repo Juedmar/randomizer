@@ -1,29 +1,15 @@
 
-// ENTER FULL SCREEN
-function activate(ele) { if (ele.requestFullscreen) {
-  ele.requestFullscreen();
-  document.getElementById('fullscreen').style.display = 'none';
-  document.getElementById('minimize').style.display = 'inline';
-  }
-}
-
-
-// EXIT FULL SCREEN
-function deactivate() { if (document.exitFullscreen) {
- document.exitFullscreen();
- document.getElementById('fullscreen').style.display = 'none';
- document.getElementById('fullscreen').style.display = 'inline';
- document.getElementById('minimize').style.display = 'none';
- }
-}
-
-
+// CHECKING PAGE NAME!
+var pageTitle = document.getElementById("title").innerHTML;
 
 // CHECK BEFORE DELETING!
 function doDelete() {
-if (confirm('¿Desea borrar todas las preguntas?')) {
-  clearQuestions()
-  }
+ if (pageTitle == "Interview Questions Randomizer") {
+  if (confirm('Would you like to clear all questions?')) { clearQuestions() }
+ }
+ if (pageTitle == "Randomizador de Preguntas") {
+  if (confirm('¿Desea borrar todas las preguntas?')) { clearQuestions() }
+ }
 }
 
 
@@ -52,12 +38,35 @@ if (allAnswers != null) {
 var questAmount = document.getElementById('questAmount');
 questAmount.value = 6;
 
+// DISABLE AUDIO
+disableAudio();
+
 // RELOAD PAGE
 window.location.reload();
 
-// DISABLE AUDIO
-disableAudio();
 }
+
+
+
+
+// ENTER FULL SCREEN
+function activate(ele) { if (ele.requestFullscreen) {
+  ele.requestFullscreen();
+  document.getElementById('fullscreen').style.display = 'none';
+  document.getElementById('minimize').style.display = 'inline';
+  }
+}
+
+
+// EXIT FULL SCREEN
+function deactivate() { if (document.exitFullscreen) {
+ document.exitFullscreen();
+ document.getElementById('fullscreen').style.display = 'none';
+ document.getElementById('fullscreen').style.display = 'inline';
+ document.getElementById('minimize').style.display = 'none';
+ }
+}
+
 
 
 

@@ -24,8 +24,9 @@ if (i >= 7 && i <= end) {
 // DISPLAYING & HIDDING BUTTONS!
 // DISPLAYING & HIDDING BUTTONS!
 
-if (i<= 6) {document.getElementById("deleteQuestButton").style.display = "none"}
-if (i >= 7 && i <= 15 ) {document.getElementById("deleteQuestButton").style.display = "block"}
+if (i <= 6) {document.getElementById("deleteQuestButton").style.display = "none"}
+if (i >= 7 && i < 15 ) {document.getElementById("deleteQuestButton").style.display = "block"}
+if (i == 15) {document.getElementById("addQuestButton").style.display = "none";}
 }
 
 
@@ -46,7 +47,7 @@ if (i >= 7 && i <= 15 ) {
  document.getElementById(thisQuest).style.display = "block";
  document.getElementById("deleteQuestButton").style.display = "block";
  }
-if (i == 15 ) {document.getElementById("addQuestButton").style.display = "none"}
+if (i == 15 ) {document.getElementById("addQuestButton").style.display = "none";}
 }
 
 
