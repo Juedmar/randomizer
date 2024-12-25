@@ -40,21 +40,47 @@ if (answerButton != null) {answerButton.style.display = "block" }; // check if a
 var questAmount = document.getElementById('questAmount').value;
 var randomQs = document.getElementById("randomQs");
 
-// NUMBERS ARRAY
-var thisArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
-var numbers = thisArray.slice(1,questAmount);
+// INITIAL FULL ARRAY OF NUMBERS (OF THE QUESTIONS)!
+const thisArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 
-// RANDOMIZING VARIABLE & UPDATING HTM ELEMENT!
-let random = "q" + Math.floor( Math.random(numbers) * (questAmount) + 1 );
+
+// CREATING UPDATED ARRAY WITHOUT THE RANDOM NUMBER!
+// THIS FINDS THE INDEX OF THE RANDOM NUMBER TO BE TEMPORARILY REMOVED!
+const updatedArray = (arr, item)  => {
+ let newArray = [...arr]
+ const index = newArray.findIndex((element) => element === item)
+ if (index !== -1) {
+  newArray.splice(index, 1)
+  return newArray
+  }
+ }
+
+
+// RANDOMIZING VARIABLE FROM UPDATED ARRAY USING THE CORRECT AMOUNT OF QUESTIONS!
+let random = Math.floor( Math.random(updatedArray(thisArray,toRemove)) * (questAmount) + 1 );
+var toRemove = parseInt(random);
+var theQuestion = "q" + random; // SETTING THE QUESTION VARIABLE!
+
+// console.log(random,toRemove,updatedArray(thisArray,toRemove));
+
+
+// FILTERING?
+// var filterArray = [];
+// filteredArray = thisArray.filter((thisArray) => { return thisArray !== random });
+// console.log(filterArray);
+
+
+// UPDATING HTML ELEMENTS!
 randomQs.innerHTML = "🎲"; // Initial dice update!
 
 // IDENTIFYING PAGE AND UPDATING RANDOM QUESTIONS (with half second timers)!
 if (pageTitle == "Interview Questions Randomizer") {
- setTimeout(function() { randomQs.innerHTML = "<b>Question N°" + random.slice(1) +":</b> " + document.getElementById(random).value }, 500);
+// setTimeout(function() { randomQs.innerHTML = "<b>Question N°" + random.slice(1) +":</b> " + document.getElementById(random).value }, 500);
+setTimeout(function() { randomQs.innerHTML = "<b>Question N°" + random +":</b> " + document.getElementById(theQuestion).value }, 500);
 }
 if (pageTitle == "Randomizador de Preguntas") {
- setTimeout(function() { randomQs.innerHTML = "<b>Pregunta N°" + random.slice(1) +":</b> " + document.getElementById(random).value }, 500);
- theAnswer = "a" + random.slice(1);
+ setTimeout(function() { randomQs.innerHTML = "<b>Pregunta N°" + random +":</b> " + document.getElementById(theQuestion).value }, 500);
+ theAnswer = "a" + random;
 }
 
 

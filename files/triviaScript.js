@@ -28,6 +28,24 @@ if (confirm('¿Reemplazar preguntas con Trivia Histórica N°1 (15)?')) {
  }
 }
 
+
+// CHILEAN TRIVIA 1 / CHECK FUNCTION!
+function triviaChile1() {
+if (confirm('¿Reemplazar preguntas con Trivia Chilena N°1 (15)?')) {
+ resetTrivia();
+ triviaChilean1();
+ }
+}
+
+// CHILEAN TRIVIA 2 / CHECK FUNCTION!
+function triviaChile2() {
+if (confirm('¿Reemplazar preguntas con Trivia Chilena N°2 (15)?')) {
+ resetTrivia();
+ triviaChilean2();
+ }
+}
+
+
 // HISTORICAL TRIVIA 2 / CHECK FUNCTION!
 function triviaHistorica2() {
 if (confirm('¿Reemplazar preguntas con Trivia Histórica N°2 (15)?')) {
@@ -180,6 +198,119 @@ document.getElementById("a14").value = "Este carnaval se celebra a finales de fe
 
 document.getElementById("q15").value = "¿Cuál de los siguientes imperios no tenía un idioma escrito: Inca, Aztecas, Egipcios, Romanos?";
 document.getElementById("a15").value = "Los Incas no tuvieron un sistema de escritura alfabético, sino un sistema de cuerdas llamado “Quipu”";
+
+loadQuestions();
+window.scrollTo(0, document.body.scrollHeight);
+startCountdown();
+}
+
+
+// TRIVIA CHILENA 1
+function triviaChilean1() {
+document.getElementById("questAmount").value = "15";
+document.getElementById("randomQs").innerHTML = "Trivia chilena 1 lista.<br>Puede iniciar las preguntas!";
+
+document.getElementById("q1").value = "¿Quién fue el líder del proceso de independencia de Chile y es considerado como el Padre de la Patria?";
+document.getElementById("a1").value = "Bernardo O'Higgins";
+
+document.getElementById("q2").value = "¿Cuál fue el nombre del líder militar mapuche que lideró la resistencia contra la colonización española en el siglo XVI y que fue paje de Pedro de Valdivia?";
+document.getElementById("a2").value = "Lautaro";
+
+document.getElementById("q3").value = "¿Cuál fue la principal actividad económica en Chile entre 1880 y 1930?";
+document.getElementById("a3").value = "La industria del salitre";
+
+document.getElementById("q4").value = "¿En qué fecha (día y año) fue la primera junta de gobierno de Chile?";
+document.getElementById("a4").value = "El 18 de septiembre de 1810";
+
+document.getElementById("q5").value = "¿Cuáles eran los colores de la primera bandera chilena?";
+document.getElementById("a5").value = "Azul, blanco y amarillo";
+
+document.getElementById("q6").value = "¿Cuál es el nombre del primer periódico de Chile?";
+document.getElementById("a6").value = "La Aurora de Chile";
+
+document.getElementById("q7").value = "¿En qué fecha se proclamó oficialmente la Independencia de Chile?";
+document.getElementById("a7").value = "El 12 de febrero de 1818";
+
+document.getElementById("q8").value = "¿Cuál es el desierto más árido del mundo y se encuentra en el norte de Chile?";
+document.getElementById("a8").value = "El Desierto de Atacama";
+
+document.getElementById("q9").value = "¿Cuál es el volcán más alto de Chile?";
+document.getElementById("a9").value = "El Ojos del Salado";
+
+document.getElementById("q10").value = "¿Cuál es el río más largo de Chile?";
+document.getElementById("a10").value = "Río Loa";
+
+document.getElementById("q11").value = "¿Qué ciudad portuaria en Chile es conocida como la Perla del Norte?";
+document.getElementById("a11").value = "Antofagasta";
+
+document.getElementById("q12").value = "¿En qué ciudad chilena se encuentra el Cerro Santa Lucía, un cerro que ofrece una vista panorámica de la ciudad?";
+document.getElementById("a12").value = "Santiago";
+
+document.getElementById("q13").value = "¿Qué región chilena alberga el desierto florido, un fenómeno natural en el que el desierto se llena de flores después de las lluvias?";
+document.getElementById("a13").value = "Región de Atacama";
+
+document.getElementById("q14").value = "¿Qué región se encuentra al extremo norte de Chile, limitando con Perú?";
+document.getElementById("a14").value = "La región de Arica y Parinacota";
+
+document.getElementById("q15").value = "¿A qué región pertenece oficialmente la Isla de Rapa Nui?";
+document.getElementById("a15").value = "Valparaíso";
+
+loadQuestions();
+window.scrollTo(0, document.body.scrollHeight);
+startCountdown();
+}
+
+
+
+// TRIVIA CHILENA 2
+function triviaChilean2() {
+document.getElementById("questAmount").value = "15";
+document.getElementById("randomQs").innerHTML = "Trivia chilena 2 lista.<br>Puede iniciar las preguntas!";
+
+document.getElementById("q1").value = "¿Cuál es el nombre de la cadena montañosa que atraviesa Chile de norte a sur y marca la frontera natural con Argentina?";
+document.getElementById("a1").value = "Cordillera de los Andes";
+
+document.getElementById("q2").value = "¿Cuál es el principal río que atraviesa la ciudad de Santiago?";
+document.getElementById("a2").value = "El río Mapocho";
+
+document.getElementById("q3").value = "¿Quiénes son los únicos Premios Nobel en Chile?";
+document.getElementById("a3").value = "Gabriela Mistral (1945) y Pablo Neruda (1971), ambos de Literatura";
+
+document.getElementById("q4").value = "¿Quién es el autor de la novela La casa de los espíritus?";
+document.getElementById("a4").value = "Isabel Allende";
+
+document.getElementById("q5").value = "¿Cuáles son los ingredientes del sándwich Barros Jarpa y a quién debe su nombre?";
+document.getElementById("a5").value = "Queso derretido y jamón. Le debe su nombre al político y ex-ministro de Estado Ernesto Barros Jarpa";
+
+document.getElementById("q6").value = "¿Cuál es el nombre real de Gabriela Mistral?";
+document.getElementById("a6").value = "Lucila Godoy Alcayaga";
+
+document.getElementById("q7").value = "¿Cómo se llama la famosa serie de libros infantiles escritos por Marcela Paz?";
+document.getElementById("a7").value = "Papelucho";
+
+document.getElementById("q8").value = "¿Qué plato típico chileno se compone de papas fritas, carne, cebolla, huevos fritos y salsas varias?";
+document.getElementById("a8").value = "La chorrillana";
+
+document.getElementById("q9").value = "¿Cuál es el plato chileno preparado a base de choclo molido, con una capa de carne y especias, cocido al horno?";
+document.getElementById("a9").value = "El pastel de choclo";
+
+document.getElementById("q10").value = "¿Cuáles son los ingredientes del sándwich chileno conocido como Barros Luco y a quién le debe su nombre?";
+document.getElementById("a10").value = "Carne de vacuno y queso derretido. El sándwich Barros Luco debe su nombre al ex-presidente chileno Ramón Barros Luco, quien era conocido por disfrutar de este plato";
+
+document.getElementById("q11").value = "¿Qué plato típico chileno se prepara con mariscos, carnes, papas, verduras y hojas de nalca, cocidos bajo tierra con piedras calientes?";
+document.getElementById("a11").value = "El curanto";
+
+document.getElementById("q12").value = "¿Cuál es el nombre del principal estadio de fútbol en la ciudad de Viña del Mar?";
+document.getElementById("a12").value = "El Estadio Sausalito";
+
+document.getElementById("q13").value = "¿Cuál es el nombre del festival de música más grande de Chile, que se celebra anualmente en Viña del Mar?";
+document.getElementById("a13").value = "El Festival Internacional de la Canción de Viña del Mar";
+
+document.getElementById("q14").value = "¿Cuál es el plato típico chileno compuesto por carne, cebolla, huevo, pasas y aceitunas, todo envuelto en masa y horneado?";
+document.getElementById("a14").value = "La empanada";
+
+document.getElementById("q15").value = "¿Cuál es el nombre del postre chileno que consiste en una capa de manjar entre dos galletas, todo cubierto de chocolate?";
+document.getElementById("a15").value = "El alfajor";
 
 loadQuestions();
 window.scrollTo(0, document.body.scrollHeight);
