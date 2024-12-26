@@ -71,6 +71,15 @@ if (confirm('¿Reemplazar preguntas con Trivia Científica 2 (15)?')) {
 }
 
 
+// FUNNY TRIVIA 1 / CHECK FUNCTION!
+function triviaChistes1() {
+if (confirm('¿Reemplazar preguntas con Trivia Chistosa 1 (15)?')) {
+ resetTrivia();
+ triviaChistosa1();
+ }
+}
+
+
 // RESET / CLEAR TRIVIA FUNCTION!
 // RESET / CLEAR TRIVIA FUNCTION!
 // RESET / CLEAR TRIVIA FUNCTION!
@@ -110,7 +119,7 @@ document.getElementById("a3").value = "Se originaron en Grecia. Se llaman así p
 document.getElementById("q4").value = "¿Qué tipo de animal es la ballena?";
 document.getElementById("a4").value = "La ballena es un mamífero marino de hasta 30 metros de longitud";
 
-document.getElementById("q5").value = "¿Qué cantidad de huesos en el cuerpo humano?";
+document.getElementById("q5").value = "¿Qué cantidad de huesos hay en el cuerpo humano?";
 document.getElementById("a5").value = "Un adulto tiene 206, mientras que los recién nacidos tienen alrededor de 300 huesos";
 
 document.getElementById("q6").value = "¿Cuándo acabó la II Guerra Mundial?";
@@ -535,6 +544,63 @@ document.getElementById("a14").value = "Aproximadamente 299,792,458 metros/segun
 
 document.getElementById("q15").value = "¿Qué nombre tiene un tipo de reacción química en la que se libera calor?";
 document.getElementById("a15").value = "Exotérmica";
+
+loadQuestions();
+window.scrollTo(0, document.body.scrollHeight);
+startCountdown();
+}
+
+
+
+// TRIVIA CHISTES 1
+function triviaChistosa1() {
+document.getElementById("questAmount").value = "15";
+document.getElementById("randomQs").innerHTML = "Trivia chistosa 1 lista.<br>Puede iniciar las preguntas!";
+
+document.getElementById("q1").value = "¿Cómo se despiden los químicos?";
+document.getElementById("a1").value = "Ácido un placer";
+
+document.getElementById("q2").value = "¿Cómo se llama el primo vegano de Bruce Lee?";
+document.getElementById("a2").value = "Broco Lee";
+
+document.getElementById("q3").value = "¿Cómo se llama el campeón de buceo japonés?";
+document.getElementById("a3").value = "Tokofondo";
+
+document.getElementById("q4").value = "¿Por qué una jirafa bebe más agua en marzo que en febrero?";
+document.getElementById("a4").value = "Porque marzo tiene más días.";
+
+document.getElementById("q5").value = "¿Quién ha estado en bodas, pero nunca se ha casado?";
+document.getElementById("a5").value = "El cura";
+
+document.getElementById("q6").value = "¿Qué es lo que jamás se puede comer en el desayuno?";
+document.getElementById("a6").value = "El almuerzo, la merienda y la cena.";
+
+document.getElementById("q7").value = "¿Cuál es el país donde todo se termina?";
+document.getElementById("a7").value = "Finlandia.";
+
+document.getElementById("q8").value = "¿Cuál es el país más picante?";
+document.getElementById("a8").value = "Chile";
+
+document.getElementById("q9").value = "¿Qué es aquello que se mueve abajo y arriba pero nunca cambia de lugar?";
+document.getElementById("a9").value = "La temperatura";
+
+document.getElementById("q10").value = "¿Qué objeto tiene cara pero no cuerpo?";
+document.getElementById("a10").value = "La moneda";
+
+document.getElementById("q11").value = "¿Qué pasa si lanzas una pelota al océano atlántico?";
+document.getElementById("a11").value = "Se moja";
+
+document.getElementById("q12").value = "¿Cuál es el día más largo de la semana?";
+document.getElementById("a12").value = "El miércoles por tiene 9 letras";
+
+document.getElementById("q13").value = "¿Cómo se llama al ascensor en China?";
+document.getElementById("a13").value = "Pulsando el botón";
+
+document.getElementById("q14").value = "Es tuyo, pero lo usa todo el mundo, ¿qué es?";
+document.getElementById("a14").value = "Tu nombre";
+
+document.getElementById("q15").value = "¿Cuál es el animal que más tarda en quitarse los zapatos?";
+document.getElementById("a15").value = "El ciempiés";
 
 loadQuestions();
 window.scrollTo(0, document.body.scrollHeight);
