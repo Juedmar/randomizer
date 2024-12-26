@@ -338,13 +338,13 @@ document.getElementById("a4").value = "Laurel";
 document.getElementById("q5").value = "¿Qué es más antiguo, las piedras de Stonehenge en Inglaterra o la ciudad inca de Machupichu?";
 document.getElementById("a5").value = "Stonehenge";
 
-document.getElementById("q6").value = "Stonehenge";
+document.getElementById("q6").value = "¿Qué sucedió en los Estados Unidos cuando los confederados bombardearon a los soldados de la Unión en Fort Sumter, Carolina del Sur?";
 document.getElementById("a6").value = "La Guerra Civil";
 
 document.getElementById("q7").value = "¿Cómo se llaman las pinturas que hacían los hombres prehistóricos en las paredes de las cuevas?";
 document.getElementById("a7").value = "Rupestres";
 
-document.getElementById("q8").value = "¿Qué antiguo pueblo se inventó la democracia: los griegos o los romanos?";
+document.getElementById("q8").value = "¿Qué antiguo pueblo inventó la democracia: los griegos o los romanos?";
 document.getElementById("a8").value = "Los griegos";
 
 document.getElementById("q9").value = "¿Qué transatlántico naufragó el 15 de abril de 1912 en su primera travesía por el océano?";
