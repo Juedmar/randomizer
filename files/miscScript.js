@@ -7,6 +7,9 @@ function doDelete() {
  if (pageTitle == "Interview Questions Randomizer") {
   if (confirm('Would you like to clear all questions?')) { clearQuestions() }
  }
+ if (pageTitle == "Study Questions Randomizer") {
+  if (confirm('Would you like to clear all questions?')) { clearQuestions() }
+ }
  if (pageTitle == "Randomizador de Preguntas") {
   if (confirm('¿Desea borrar todas las preguntas?')) { clearQuestions() }
  }

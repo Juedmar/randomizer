@@ -6,7 +6,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="icon" href="media/favicon-speak.png">
  <link rel="stylesheet" href="files/randomizer-style.css">
- <title>Study-Quiz-Inator!</title>
+ <title>Trivia... inador!</title>
 
 <!- CONNECTED TO JQUERY WITH THE FOLLOWING SCRIPT ->
 <script src="files/jquery-3.7.1.slim.js"></script>
@@ -43,10 +43,10 @@ loadQuestions();
 
 <div style="position: absolute; top: 10px; left: 10px;">
  <a href="index.html"><button class="topButtons" title="Interview Format!" value="Interviews!">🗣️</button></a>
- <a href="trivia.html"><button class="topButtons" title="Preguntas de Trivia (Español)!" value="Preguntas de Trivia (Español)!">🎲</button></a>
+ <a href="study.html"><button class="topButtons" title="Study Questions (English)!" value="Study Questions (English)!">📝</button></a>
  </div>
 
-<div id="title" class="title">Study Questions Randomizer</div>
+<div id="title" class="title">Randomizador de Preguntas</div>
 
 <div id="questButton" style="position: absolute; top: 10px; right: 52px; display: none;">
  <button class="topButtons" value="Questions?" title="Open questions!" onclick="slideQuestUp(); hideRandomizer()">&nbsp;❓&nbsp;</button></a>
@@ -64,12 +64,12 @@ loadQuestions();
 
 <div class="randomizer" id="randomizer" style="display: none; visibility: hidden;">
  <div class="closeButton" onclick="slideQuestUp(); hideRandomizer()" title="Close randomizer!">❌</div>
- <b>RANDOMIZER:</b><br>
+ <b>RANDOMIZADOR:</b><br>
  <br>
- <div id="randomQs" class="randomQs">Your random questions<br>will show here!!</div>
+ <div id="randomQs" class="randomQs">Sus preguntas aleatorias<br>aparecerán aquí!!</div>
  <br>
- <div id="answerButton" class="studyButton" style="left: 15%; display: none;" title="Display answer!" onclick="getAnswer()">Answer?</div>
- <div id="randomButton" class="studyButton" style="right: 15%;" title="Display randomized question!" onclick="goRandomize()">Question!</div>
+ <div id="answerButton" class="studyButton" style="left: 15%; display: none;" title="Display answer!" onclick="getAnswer()">Respuesta?</div>
+ <div id="randomButton" class="studyButton" style="right: 15%;" title="Display randomized question!" onclick="goRandomize()">Preguntar!</div>
  <br>
  <br>
  <div id="audioOn" class="audioToggle" onclick="enableAudio()" style="cursor: pointer;" title="Enable sound effect!">🔈</div>
@@ -78,67 +78,75 @@ loadQuestions();
 
 
 <div class="questions" id="questions" style="display: block; visibility: visible;">
-<span style="padding-left: 75px;"><b>Questions:</b></span><br><br>
+<span style="padding-left: 75px;"><b>Preguntas:</b></span><br><br>
  <div class="addQuestButton" id="addQuestButton" onclick="showMoreQs()" title="Add a question!">➕</div>
  <div class="deleteQuestButton" id="deleteQuestButton" onclick="showLessQs()" title="Delete last question!">➖</div>
-<span class="answerTitle"><b>Answers:</b></span>
+<span class="answerTitle"><b>Respuestas:</b></span>
  <div class="closeButton" onclick="slideQuestDown(); showRandomizer()" title="Close questions!">❌</div>
 
 <textarea id="questAmount" class="questAmount" rows="1" cols="auto" maxlength="5" style="display: none;">6</textarea>
 
-<div class="questList">01. <textarea id="q1" class="studyQs" rows="1" cols="auto" placeholder="Question N°1"></textarea>
-<textarea id="a1" class="answers" rows="1" cols="auto" placeholder="Answer N°1"></textarea><br></div>
+<div class="questList">01. <textarea id="q1" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°1"></textarea>
+<textarea id="a1" class="answers" rows="1" cols="auto" placeholder="Respuesta N°1"></textarea><br></div>
 
-<div class="questList">02. <textarea id="q2" class="studyQs" rows="1" cols="auto" placeholder="Question N°2"></textarea>
-<textarea id="a2" class="answers" rows="1" cols="auto" placeholder="Answer N°2"></textarea><br></div>
+<div class="questList">02. <textarea id="q2" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°2"></textarea>
+<textarea id="a2" class="answers" rows="1" cols="auto" placeholder="Respuesta N°2"></textarea><br></div>
 
-<div class="questList">03. <textarea id="q3" class="studyQs" rows="1" cols="auto" placeholder="Question N°3"></textarea>
-<textarea id="a3" class="answers" rows="1" cols="auto" placeholder="Answer N°3"></textarea><br></div>
+<div class="questList">03. <textarea id="q3" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°3"></textarea>
+<textarea id="a3" class="answers" rows="1" cols="auto" placeholder="Respuesta N°3"></textarea><br></div>
 
-<div class="questList">04. <textarea id="q4" class="studyQs" rows="1" cols="auto" placeholder="Question N°4"></textarea>
-<textarea id="a4" class="answers" rows="1" cols="auto" placeholder="Answer N°4"></textarea><br></div>
+<div class="questList">04. <textarea id="q4" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°4"></textarea>
+<textarea id="a4" class="answers" rows="1" cols="auto" placeholder="Respuesta N°4"></textarea><br></div>
 
-<div class="questList">05. <textarea id="q5" class="studyQs" rows="1" cols="auto" placeholder="Question N°5"></textarea>
-<textarea id="a5" class="answers" rows="1" cols="auto" placeholder="Answer N°5"></textarea><br></div>
+<div class="questList">05. <textarea id="q5" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°5"></textarea>
+<textarea id="a5" class="answers" rows="1" cols="auto" placeholder="Respuesta N°5"></textarea><br></div>
 
-<div class="questList">06. <textarea id="q6" class="studyQs" rows="1" cols="auto" placeholder="Question N°6"></textarea>
-<textarea id="a6" class="answers" rows="1" cols="auto" placeholder="Answer N°6"></textarea><br></div>
+<div class="questList">06. <textarea id="q6" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°6"></textarea>
+<textarea id="a6" class="answers" rows="1" cols="auto" placeholder="Respuesta N°6"></textarea><br></div>
 
 <!-- HIDDEN DIVS -->
-<div class="questList" id="list7" style="display: none;">07. <textarea id="q7" class="studyQs" rows="1" cols="auto" placeholder="Question N°7"></textarea>
-<textarea id="a7" class="answers" rows="1" cols="auto" placeholder="Answer N°7"></textarea><br></div>
+<div class="questList" id="list7" style="display: none;">07. <textarea id="q7" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°7"></textarea>
+<textarea id="a7" class="answers" rows="1" cols="auto" placeholder="Respuesta N°7"></textarea><br></div>
 
-<div class="questList" id="list8" style="display: none;">08. <textarea id="q8" class="studyQs" rows="1" cols="auto" placeholder="Question N°8"></textarea>
-<textarea id="a8" class="answers" rows="1" cols="auto" placeholder="Answer N°8"></textarea><br></div>
+<div class="questList" id="list8" style="display: none;">08. <textarea id="q8" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°8"></textarea>
+<textarea id="a8" class="answers" rows="1" cols="auto" placeholder="Respuesta N°8"></textarea><br></div>
 
-<div class="questList" id="list9" style="display: none;">09. <textarea id="q9" class="studyQs" rows="1" cols="auto" placeholder="Question N°9"></textarea>
-<textarea id="a9" class="answers" rows="1" cols="auto" placeholder="Answer N°9"></textarea><br></div>
+<div class="questList" id="list9" style="display: none;">09. <textarea id="q9" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°9"></textarea>
+<textarea id="a9" class="answers" rows="1" cols="auto" placeholder="Respuesta N°9"></textarea><br></div>
 
-<div class="questList" id="list10" style="display: none;">10. <textarea id="q10" class="studyQs" rows="1" cols="auto" placeholder="Question N°10"></textarea>
-<textarea id="a10" class="answers" rows="1" cols="auto" placeholder="Answer N°10"></textarea><br></div>
+<div class="questList" id="list10" style="display: none;">10. <textarea id="q10" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°10"></textarea>
+<textarea id="a10" class="answers" rows="1" cols="auto" placeholder="Respuesta N°10"></textarea><br></div>
 
-<div class="questList" id="list11" style="display: none;">11. <textarea id="q11" class="studyQs" rows="1" cols="auto" placeholder="Question N°11"></textarea>
-<textarea id="a11" class="answers" rows="1" cols="auto" placeholder="Answer N°11"></textarea><br></div>
+<div class="questList" id="list11" style="display: none;">11. <textarea id="q11" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°11"></textarea>
+<textarea id="a11" class="answers" rows="1" cols="auto" placeholder="Respuesta N°11"></textarea><br></div>
 
-<div class="questList" id="list12" style="display: none;">12. <textarea id="q12" class="studyQs" rows="1" cols="auto" placeholder="Question N°12"></textarea>
-<textarea id="a12" class="answers" rows="1" cols="auto" placeholder="Answer N°12"></textarea><br></div>
+<div class="questList" id="list12" style="display: none;">12. <textarea id="q12" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°12"></textarea>
+<textarea id="a12" class="answers" rows="1" cols="auto" placeholder="Respuesta N°12"></textarea><br></div>
 
-<div class="questList" id="list13" style="display: none;">13. <textarea id="q13" class="studyQs" rows="1" cols="auto" placeholder="Question N°13"></textarea>
-<textarea id="a13" class="answers" rows="1" cols="auto" placeholder="Answer N°13"></textarea><br></div>
+<div class="questList" id="list13" style="display: none;">13. <textarea id="q13" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°13"></textarea>
+<textarea id="a13" class="answers" rows="1" cols="auto" placeholder="Respuesta N°13"></textarea><br></div>
 
-<div class="questList" id="list14" style="display: none;">14. <textarea id="q14" class="studyQs" rows="1" cols="auto" placeholder="Question N°14"></textarea>
-<textarea id="a14" class="answers" rows="1" cols="auto" placeholder="Answer N°14"></textarea><br></div>
+<div class="questList" id="list14" style="display: none;">14. <textarea id="q14" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°14"></textarea>
+<textarea id="a14" class="answers" rows="1" cols="auto" placeholder="Respuesta N°14"></textarea><br></div>
 
-<div class="questList" id="list15" style="display: none;">15. <textarea id="q15" class="studyQs" rows="1" cols="auto" placeholder="Question N°15"></textarea>
-<textarea id="a15" class="answers" rows="1" cols="auto" placeholder="Answer N°15"></textarea><br></div>
+<div class="questList" id="list15" style="display: none;">15. <textarea id="q15" class="studyQs" rows="1" cols="auto" placeholder="Pregunta N°15"></textarea>
+<textarea id="a15" class="answers" rows="1" cols="auto" placeholder="Respuesta N°15"></textarea><br></div>
 
 <br>
-<div id="goButton" class="actionButton" onclick="slideQuestDown(); showRandomizer()" title="Get ready to randomize!">Start!</div>
+<div id="goButton" class="actionButton" onclick="slideQuestDown(); showRandomizer()" title="Get ready to randomize!">Comenzar!</div>
 <br>
  <div id="trivia" class="trivia">
-  <span>Topics:</span>
-  <span class="triviaIcons" title="Sample Questions (15)" onclick="sampleQuestions1()">❓</span>
-  <span class="triviaIcons" title="Clear all questions?" onclick="doDelete()">🗑️</span>
+  <span>Trivia:</span>
+  <span class="triviaIcons" title="Trivia General 1 (15)" onclick="triviaGeneral1()">🤓</span>
+  <span class="triviaIcons" title="Trivia General 2 (15)" onclick="triviaGeneral2()">🤓</span>
+  <span class="triviaIcons" title="Trivia Chilena 1 (15)" onclick="triviaChile1()">🗿</span>
+  <span class="triviaIcons" title="Trivia Chilena 2 (15)" onclick="triviaChile2()">🗿</span>
+  <span class="triviaIcons" title="Trivia Histórica 1 (15)" onclick="triviaHistorica1()">🏛️</span>
+  <span class="triviaIcons" title="Trivia Histórica 2 (15)" onclick="triviaHistorica2()">🏛️</span>
+  <span class="triviaIcons" title="Trivia Científica 1 (15)" onclick="triviaCiencias1()">🔬</span>
+  <span class="triviaIcons" title="Trivia Científica 2 (15)" onclick="triviaCiencias2()">🔬</span>
+  <span class="triviaIcons" title="Trivia Chistosa 1 (15)" onclick="triviaChistes1()">😂</span>
+  <span class="triviaIcons" title="Borrar preguntas" onclick="doDelete()">🗑️</span>
  </div>
 </div>
 
@@ -220,7 +228,7 @@ if (i == 15 ) {document.getElementById("addQuestButton").style.display = "none"}
 <script type="text/javascript" src="files/loadQsScript.js"></script>
 <script type="text/javascript" src="files/randomizeScript.js"></script>
 <script type="text/javascript" src="files/animationScript.js"></script>
-<script type="text/javascript" src="files/studyScript.js"></script>
+<script type="text/javascript" src="files/triviaScript.js"></script>
 <script type="text/javascript" src="files/miscScript.js"></script>
 
 

@@ -95,6 +95,10 @@ function resetTrivia() {
 
 // RESETTING ANSWER BUTTON!
  document.getElementById("answerButton").style.display = "none";
+
+// RESETTING DELETE QUESTION BUTTON!
+ var questAmount = document.getElementById('questAmount').value;
+ if (questAmount >= 7 && questAmount <= 15 ) { document.getElementById("deleteQuestButton").style.display = "block" }
 }
 
 
@@ -533,10 +537,10 @@ document.getElementById("a10").value = "Ambas escalas coinciden a lo -40 grados"
 document.getElementById("q11").value = "¿Cuáles son los cuatro metales preciosos primarios?";
 document.getElementById("a11").value = "Oro, plata, platino y paladio";
 
-document.getElementById("q12").value = "Esta parte del cerebro se ocupa de la audición y el lenguaje.";
+document.getElementById("q12").value = "Esta parte del cerebro se ocupa de la audición y el lenguaje";
 document.getElementById("a12").value = "El lóbulo temporal";
 
-document.getElementById("q13").value = "Este médico griego fue el primero en llevar registros de las historias de sus pacientes.";
+document.getElementById("q13").value = "Este médico griego fue el primero en llevar registros de las historias de sus pacientes";
 document.getElementById("a13").value = "Hipócrates";
 
 document.getElementById("q14").value = "¿Cuál es la velocidad de la luz en el vacío (de forma aproximada, en kilómetros por segundo)?";
@@ -567,16 +571,16 @@ document.getElementById("q3").value = "¿Cómo se llama el campeón de buceo jap
 document.getElementById("a3").value = "Tokofondo";
 
 document.getElementById("q4").value = "¿Por qué una jirafa bebe más agua en marzo que en febrero?";
-document.getElementById("a4").value = "Porque marzo tiene más días.";
+document.getElementById("a4").value = "Porque marzo tiene más días";
 
 document.getElementById("q5").value = "¿Quién ha estado en bodas, pero nunca se ha casado?";
 document.getElementById("a5").value = "El cura";
 
 document.getElementById("q6").value = "¿Qué es lo que jamás se puede comer en el desayuno?";
-document.getElementById("a6").value = "El almuerzo, la merienda y la cena.";
+document.getElementById("a6").value = "El almuerzo, la merienda y la cena";
 
 document.getElementById("q7").value = "¿Cuál es el país donde todo se termina?";
-document.getElementById("a7").value = "Finlandia.";
+document.getElementById("a7").value = "Finlandia";
 
 document.getElementById("q8").value = "¿Cuál es el país más picante?";
 document.getElementById("a8").value = "Chile";

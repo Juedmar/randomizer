@@ -74,10 +74,15 @@ var theQuestion = "q" + random; // SETTING THE QUESTION VARIABLE!
 randomQs.innerHTML = "🎲"; // Initial dice update!
 
 // IDENTIFYING PAGE AND UPDATING RANDOM QUESTIONS (with half second timers)!
-if (pageTitle == "Interview Questions Randomizer") {
-// setTimeout(function() { randomQs.innerHTML = "<b>Question N°" + random.slice(1) +":</b> " + document.getElementById(random).value }, 500);
-setTimeout(function() { randomQs.innerHTML = "<b>Question N°" + random +":</b> " + document.getElementById(theQuestion).value }, 500);
+if (pageTitle == "Interview Questions Randomizer" || pageTitle == "Study Questions Randomizer") {
+ setTimeout(function() { randomQs.innerHTML = "<b>Question N°" + random +":</b> " + document.getElementById(theQuestion).value }, 500);
 }
+
+if (pageTitle == "Study Questions Randomizer") {
+ setTimeout(function() { randomQs.innerHTML = "<b>Question N°" + random +":</b> " + document.getElementById(theQuestion).value }, 500);
+ theAnswer = "a" + random;
+}
+
 if (pageTitle == "Randomizador de Preguntas") {
  setTimeout(function() { randomQs.innerHTML = "<b>Pregunta N°" + random +":</b> " + document.getElementById(theQuestion).value }, 500);
  theAnswer = "a" + random;
@@ -98,7 +103,12 @@ function getAnswer() {
 var thisAnswer = theAnswer;
 var randomQs = document.getElementById("randomQs");
 document.getElementById("randomQs").innerHTML = "📖";
-setTimeout(function() { document.getElementById("randomQs").innerHTML = "<b>Respuesta:</b> " + document.getElementById(thisAnswer).value + "!" }, 400)
+if (pageTitle == "Study Questions Randomizer") {
+ setTimeout(function() { document.getElementById("randomQs").innerHTML = "<b>Answer:</b> " + document.getElementById(thisAnswer).value + "!" }, 400)
+}
+if (pageTitle == "Randomizador de Preguntas") {
+ setTimeout(function() { document.getElementById("randomQs").innerHTML = "<b>Respuesta:</b> " + document.getElementById(thisAnswer).value + "!" }, 400)
+}
 
 // AUDIO PLAY CHECK FUNCTION
 // PLAY ANSWER EFFECT AUDIO!
